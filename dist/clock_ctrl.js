@@ -1,9 +1,9 @@
 'use strict';
 
-System.register(['app/plugins/sdk', 'moment'], function (_export, _context) {
+System.register(['app/plugins/sdk', 'moment', 'lodash'], function (_export, _context) {
   "use strict";
 
-  var PanelCtrl, moment, _createClass, ClockCtrl;
+  var PanelCtrl, moment, _, _createClass, panelDefaults, ClockCtrl;
 
   function _classCallCheck(instance, Constructor) {
     if (!(instance instanceof Constructor)) {
@@ -40,6 +40,8 @@ System.register(['app/plugins/sdk', 'moment'], function (_export, _context) {
       PanelCtrl = _appPluginsSdk.PanelCtrl;
     }, function (_moment) {
       moment = _moment.default;
+    }, function (_lodash) {
+      _ = _lodash.default;
     }],
     execute: function () {
       _createClass = function () {
@@ -60,6 +62,13 @@ System.register(['app/plugins/sdk', 'moment'], function (_export, _context) {
         };
       }();
 
+      panelDefaults = {
+        clockType: '24 hour',
+        fontSize: '60px',
+        fontWeight: 'normal',
+        bgColor: null
+      };
+
       _export('ClockCtrl', ClockCtrl = function (_PanelCtrl) {
         _inherits(ClockCtrl, _PanelCtrl);
 
@@ -68,6 +77,7 @@ System.register(['app/plugins/sdk', 'moment'], function (_export, _context) {
 
           var _this = _possibleConstructorReturn(this, (ClockCtrl.__proto__ || Object.getPrototypeOf(ClockCtrl)).call(this, $scope, $injector));
 
+          _.defaults(_this.panel, panelDefaults);
           _this.updateClock();
           return _this;
         }
