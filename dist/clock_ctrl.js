@@ -1,6 +1,6 @@
 'use strict';
 
-System.register(['app/plugins/sdk', 'moment'], function (_export, _context) {
+System.register(['app/plugins/sdk', 'moment', './css/clock-panel.css'], function (_export, _context) {
   "use strict";
 
   var PanelCtrl, moment, _createClass, ClockCtrl;
@@ -40,7 +40,7 @@ System.register(['app/plugins/sdk', 'moment'], function (_export, _context) {
       PanelCtrl = _appPluginsSdk.PanelCtrl;
     }, function (_moment) {
       moment = _moment.default;
-    }],
+    }, function (_cssClockPanelCss) {}],
     execute: function () {
       _createClass = function () {
         function defineProperties(target, props) {
