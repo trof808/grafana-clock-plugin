@@ -14,6 +14,12 @@ export class ClockCtrl extends PanelCtrl {
     super($scope, $injector);
     _.defaults(this.panel, panelDefaults);
     this.updateClock();
+
+    this.events.on('init-edit-mode', this.onInitEditMode.bind(this));
+  }
+
+  onInitEditMode() {
+    this.addEditorTab('Options', 'public/plugins/test-clock-plugin/editor.html', 2);
   }
 
   updateClock() {

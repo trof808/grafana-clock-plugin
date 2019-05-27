@@ -79,10 +79,17 @@ System.register(['app/plugins/sdk', 'moment', 'lodash'], function (_export, _con
 
           _.defaults(_this.panel, panelDefaults);
           _this.updateClock();
+
+          _this.events.on('init-edit-mode', _this.onInitEditMode.bind(_this));
           return _this;
         }
 
         _createClass(ClockCtrl, [{
+          key: 'onInitEditMode',
+          value: function onInitEditMode() {
+            this.addEditorTab('Options', 'public/plugins/test-clock-plugin/editor.html', 2);
+          }
+        }, {
           key: 'updateClock',
           value: function updateClock() {
             var _this2 = this;
