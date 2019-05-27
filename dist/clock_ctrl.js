@@ -77,6 +77,7 @@ System.register(['app/plugins/sdk', 'moment', 'lodash'], function (_export, _con
 
           var _this = _possibleConstructorReturn(this, (ClockCtrl.__proto__ || Object.getPrototypeOf(ClockCtrl)).call(this, $scope, $injector));
 
+          console.log(element);
           _.defaults(_this.panel, panelDefaults);
           _this.updateClock();
 

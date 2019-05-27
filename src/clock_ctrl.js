@@ -12,6 +12,7 @@ const panelDefaults = {
 export class ClockCtrl extends PanelCtrl {
   constructor($scope, $injector) {
     super($scope, $injector);
+    console.log(element);
     _.defaults(this.panel, panelDefaults);
     this.updateClock();
 
