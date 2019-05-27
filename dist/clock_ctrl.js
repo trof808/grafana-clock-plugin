@@ -3,7 +3,7 @@
 System.register(['app/plugins/sdk', 'moment', 'lodash'], function (_export, _context) {
   "use strict";
 
-  var PanelCtrl, moment, _, _createClass, panelDefaults, ClockCtrl;
+  var PanelCtrl, MetricsPanelCtrl, moment, _, _createClass, panelDefaults, ClockCtrl;
 
   function _classCallCheck(instance, Constructor) {
     if (!(instance instanceof Constructor)) {
@@ -38,6 +38,7 @@ System.register(['app/plugins/sdk', 'moment', 'lodash'], function (_export, _con
   return {
     setters: [function (_appPluginsSdk) {
       PanelCtrl = _appPluginsSdk.PanelCtrl;
+      MetricsPanelCtrl = _appPluginsSdk.MetricsPanelCtrl;
     }, function (_moment) {
       moment = _moment.default;
     }, function (_lodash) {
@@ -69,23 +70,27 @@ System.register(['app/plugins/sdk', 'moment', 'lodash'], function (_export, _con
         bgColor: null
       };
 
-      _export('ClockCtrl', ClockCtrl = function (_PanelCtrl) {
-        _inherits(ClockCtrl, _PanelCtrl);
+      _export('ClockCtrl', ClockCtrl = function (_MetricsPanelCtrl) {
+        _inherits(ClockCtrl, _MetricsPanelCtrl);
 
         function ClockCtrl($scope, $injector) {
           _classCallCheck(this, ClockCtrl);
 
           var _this = _possibleConstructorReturn(this, (ClockCtrl.__proto__ || Object.getPrototypeOf(ClockCtrl)).call(this, $scope, $injector));
 
-          console.log(element);
           _.defaults(_this.panel, panelDefaults);
           _this.updateClock();
 
-          _this.events.on('init-edit-mode', _this.onInitEditMode.bind(_this));
+          _this.events.on('data-received', _this._onDataReceived.bind(_this));
           return _this;
         }
 
         _createClass(ClockCtrl, [{
+          key: '_onDataReceived',
+          value: function _onDataReceived(data) {
+            console.log(data);
+          }
+        }, {
           key: 'onInitEditMode',
           value: function onInitEditMode() {
             this.addEditorTab('Options', 'public/plugins/test-clock-plugin/editor.html', 2);
@@ -103,7 +108,7 @@ System.register(['app/plugins/sdk', 'moment', 'lodash'], function (_export, _con
         }]);
 
         return ClockCtrl;
-      }(PanelCtrl));
+      }(MetricsPanelCtrl));
 
       _export('ClockCtrl', ClockCtrl);
 
