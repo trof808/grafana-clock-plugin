@@ -1,4 +1,4 @@
-import {PanelCtrl} from 'app/plugins/sdk';
+import {PanelCtrl, MetricsPanelCtrl} from 'app/plugins/sdk';
 import moment from 'moment';
 import _ from 'lodash';
 
@@ -9,14 +9,19 @@ const panelDefaults = {
   bgColor: null
 };
 
-export class ClockCtrl extends PanelCtrl {
+export class ClockCtrl extends MetricsPanelCtrl {
   constructor($scope, $injector) {
     super($scope, $injector);
-    console.log(element);
     _.defaults(this.panel, panelDefaults);
     this.updateClock();
 
-    this.events.on('init-edit-mode', this.onInitEditMode.bind(this));
+    this.events.on(
+        'data-received', this._onDataReceived.bind(this)
+    );
+  }
+
+  _onDataReceived(data) {
+      console.log(data);
   }
 
   onInitEditMode() {
