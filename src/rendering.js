@@ -30,7 +30,7 @@ export default function link(scope, elem, attrs, ctrl) {
             .domain([min, max])
             .range([0, width]);
 
-        var data = d3.layout.histogram()
+        var data = d3.histogram()
             .bins(x.ticks(20))
             (values);
 

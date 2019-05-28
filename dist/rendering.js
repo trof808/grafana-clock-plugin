@@ -33,7 +33,7 @@ System.register(['jquery', 'd3'], function (_export, _context) {
             var min = d3.min(values);
             var x = d3.scaleLinear().domain([min, max]).range([0, width]);
 
-            var data = d3.layout.histogram().bins(x.ticks(20))(values);
+            var data = d3.histogram().bins(x.ticks(20))(values);
 
             console.log(x);
             console.log(data);
