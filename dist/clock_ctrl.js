@@ -139,7 +139,7 @@ System.register(['app/plugins/sdk', 'moment', 'lodash', './rendering'], function
             return _.map(data, function (d, i) {
               return {
                 title: 'data ' + i,
-                items: _.map(d.row, function (r, j) {
+                items: _.map(d.rows, function (r, j) {
                   return {
                     x: moment(r[0]),
                     y: r[1]
