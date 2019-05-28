@@ -13,7 +13,7 @@ System.register(['jquery', 'd3'], function (_export, _context) {
 
         function render() {
             console.log(panel);
-            if (panel.histData[0].items.length > 0) {
+            if (panel.histData.length > 0 && panel.histData[0].items.length > 0) {
                 renderHist();
             }
         }
