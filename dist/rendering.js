@@ -29,11 +29,11 @@ System.register(['jquery', 'd3'], function (_export, _context) {
                 return d.date;
             }).domain(x.domain()).thresholds(x.ticks(d3.timeWeek));
 
-            var svg = d3.select("div.panel-content").append("svg").attr("width", width + margin.left + margin.right).attr("height", height + margin.top + margin.bottom).append("g").attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+            var svg = d3.select("div.panel-content > .panel-height-helper").append("svg").attr("width", width + margin.left + margin.right).attr("height", height + margin.top + margin.bottom).append("g").attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
             svg.append("g").attr("class", "axis axis--x").attr("transform", "translate(0," + height + ")").call(d3.axisBottom(x));
 
-            d3.csv("homicides.csv", type, function (error, data) {
+            d3.csv("https://bl.ocks.org/mbostock/raw/b2fee5dae98555cf78c9e4c5074b87c3/homicides.csv", type, function (error, data) {
                 if (error) throw error;
 
                 var bins = histogram(data);
