@@ -66,15 +66,15 @@ export default function link(scope, elem, attrs, ctrl) {
         bar.append("rect")
             .attr("x", 1)
             .attr("width", function(d) { return x(d.x1) - x(d.x0) - 1; })
-            .attr("height", function(d) { return height - y(d.length); })
-            .attr("fill", function(d) { return colorScale(d.length) });
+            .attr("height", function(d) { return height - y(d[0]); })
+            .attr("fill", function(d) { return colorScale(d[0]) });
 
         bar.append("text")
             .attr("dy", ".75em")
             .attr("y", -12)
             .attr("x", function(d) { return (x(d.x1) - x(d.x0)) / 2; })
             .attr("text-anchor", "middle")
-            .text(function(d) { return formatCount(d.length); });
+            .text(function(d) { return formatCount(d[0]); });
 
         svg.append("g")
             .attr("class", "x axis")
