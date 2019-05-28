@@ -11,7 +11,7 @@ const panelDefaults = {
 };
 
 export class ClockCtrl extends MetricsPanelCtrl {
-  constructor($scope, $injector) {
+  constructor($scope, $injector, $rootScope) {
     super($scope, $injector);
       this.$rootScope = $rootScope;
       this.hiddenSeries = {};

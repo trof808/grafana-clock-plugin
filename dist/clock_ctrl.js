@@ -75,7 +75,7 @@ System.register(['app/plugins/sdk', 'moment', 'lodash', './rendering'], function
       _export('ClockCtrl', ClockCtrl = function (_MetricsPanelCtrl) {
         _inherits(ClockCtrl, _MetricsPanelCtrl);
 
-        function ClockCtrl($scope, $injector) {
+        function ClockCtrl($scope, $injector, $rootScope) {
           _classCallCheck(this, ClockCtrl);
 
           var _this = _possibleConstructorReturn(this, (ClockCtrl.__proto__ || Object.getPrototypeOf(ClockCtrl)).call(this, $scope, $injector));
