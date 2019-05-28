@@ -1,9 +1,9 @@
 'use strict';
 
-System.register(['app/plugins/sdk', 'moment', 'lodash'], function (_export, _context) {
+System.register(['app/plugins/sdk', 'moment', 'lodash', './rendering'], function (_export, _context) {
   "use strict";
 
-  var PanelCtrl, MetricsPanelCtrl, moment, _, _createClass, panelDefaults, ClockCtrl;
+  var PanelCtrl, MetricsPanelCtrl, moment, _, rendering, _createClass, panelDefaults, ClockCtrl;
 
   function _classCallCheck(instance, Constructor) {
     if (!(instance instanceof Constructor)) {
@@ -43,6 +43,8 @@ System.register(['app/plugins/sdk', 'moment', 'lodash'], function (_export, _con
       moment = _moment.default;
     }, function (_lodash) {
       _ = _lodash.default;
+    }, function (_rendering) {
+      rendering = _rendering.default;
     }],
     execute: function () {
       _createClass = function () {
@@ -94,6 +96,7 @@ System.register(['app/plugins/sdk', 'moment', 'lodash'], function (_export, _con
           key: 'link',
           value: function link(scope, elem, attrs, ctrl) {
             console.log(scope, elem, attrs, ctrl);
+            rendering(scope, elem, attrs, ctrl);
           }
         }, {
           key: 'onInitEditMode',

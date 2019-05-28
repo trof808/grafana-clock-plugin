@@ -1,6 +1,7 @@
 import {PanelCtrl, MetricsPanelCtrl} from 'app/plugins/sdk';
 import moment from 'moment';
 import _ from 'lodash';
+import rendering from './rendering';
 
 const panelDefaults = {
   clockType: '24 hour',
@@ -26,6 +27,7 @@ export class ClockCtrl extends MetricsPanelCtrl {
 
   link(scope, elem, attrs, ctrl) {
     console.log(scope, elem, attrs, ctrl);
+    rendering(scope, elem, attrs, ctrl);
   }
 
   onInitEditMode() {
