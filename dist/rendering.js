@@ -1,9 +1,9 @@
 'use strict';
 
-System.register(['jquery', 'd3'], function (_export, _context) {
+System.register(['jquery', 'd3', 'plotly.js-dist'], function (_export, _context) {
     "use strict";
 
-    var $, d3;
+    var $, d3, Plotly;
     function link(scope, elem, attrs, ctrl) {
         var panel = ctrl.panel;
 
@@ -14,8 +14,18 @@ System.register(['jquery', 'd3'], function (_export, _context) {
         function render() {
             console.log(panel);
             if (panel.histData.length > 0 && panel.histData[0].items.length > 0) {
-                renderHist();
+                renderHist2();
             }
+        }
+
+        function renderHist2() {
+            var data = [{
+                x: ['giraffes', 'orangutans', 'monkeys'],
+                y: [20, 14, 23],
+                type: 'bar'
+            }];
+
+            Plotly.newPlot('panel-plugin-test-clock-plugin.panel-height-helper ng-transclude.panel-height-helper', data);
         }
 
         function renderHist() {
@@ -85,6 +95,8 @@ System.register(['jquery', 'd3'], function (_export, _context) {
             $ = _jquery.default;
         }, function (_d) {
             d3 = _d;
+        }, function (_plotlyJsDist) {
+            Plotly = _plotlyJsDist.default;
         }],
         execute: function () {}
     };

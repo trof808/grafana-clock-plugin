@@ -1,5 +1,6 @@
 import $ from 'jquery';
 import * as d3 from "d3";
+import Plotly from 'plotly.js-dist';
 
 export default function link(scope, elem, attrs, ctrl) {
     const panel = ctrl.panel;
@@ -11,8 +12,20 @@ export default function link(scope, elem, attrs, ctrl) {
     function render() {
         console.log(panel);
         if (panel.histData.length > 0 && panel.histData[0].items.length > 0) {
-            renderHist();
+            renderHist2();
         }
+    }
+
+    function renderHist2() {
+        var data = [
+            {
+                x: ['giraffes', 'orangutans', 'monkeys'],
+                y: [20, 14, 23],
+                type: 'bar'
+            }
+        ];
+
+        Plotly.newPlot('panel-plugin-test-clock-plugin.panel-height-helper ng-transclude.panel-height-helper', data);
     }
 
     function renderHist() {
