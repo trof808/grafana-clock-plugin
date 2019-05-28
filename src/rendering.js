@@ -15,10 +15,9 @@ export default function link(scope, elem, attrs, ctrl) {
         //     element[0].remove();
         //     console.log(element);
         // }
-        // if (panel.histData.length > 0 && panel.histData[0].items.length > 0 && element.length < 1) {
-        //     renderHist();
-        // }
-        renderHist();
+        if (panel.histData.length > 0 && panel.histData[0].items.length > 0) {
+            renderHist();
+        }
     }
 
     function renderHist() {
