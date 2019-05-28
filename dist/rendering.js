@@ -15,7 +15,7 @@ System.register(['jquery', 'd3'], function (_export, _context) {
             var element = document.querySelectorAll("panel-plugin-test-clock-plugin.panel-height-helper ng-transclude.panel-height-helper svg");
             if (element.length > 0) {
                 console.log(element);
-                document.removeChild(element[0]);
+                element[0].remove();
                 console.log(element);
             }
             if (panel.histData.length > 0 && panel.histData[0].items.length > 0 && element.length < 1) {
