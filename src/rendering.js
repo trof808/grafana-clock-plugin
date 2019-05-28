@@ -3,17 +3,19 @@ import * as d3 from "d3";
 
 export default function link(scope, elem, attrs, ctrl) {
     const panel = ctrl.panel;
-    const svg = elem.find("panel-plugin-test-clock-plugin.panel-height-helper ng-transclude.panel-height-helper svg");
+    const element = elem.find("panel-plugin-test-clock-plugin.panel-height-helper ng-transclude.panel-height-helper svg");
     ctrl.events.on('render', function () {
         render();
     });
 
     function render() {
         console.log(panel);
-        if (svg.length > 0) {
+        if (element.length > 0) {
+            console.log(element);
             document.removeChild(svg);
+            console.log(element);
         }
-        if (panel.histData.length > 0 && panel.histData[0].items.length > 0 && svg.length < 1) {
+        if (panel.histData.length > 0 && panel.histData[0].items.length > 0 && element.length < 1) {
             renderHist();
         }
     }

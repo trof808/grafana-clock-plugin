@@ -6,17 +6,19 @@ System.register(["jquery", "d3"], function (_export, _context) {
     var $, d3;
     function link(scope, elem, attrs, ctrl) {
         var panel = ctrl.panel;
-        var svg = elem.find("panel-plugin-test-clock-plugin.panel-height-helper ng-transclude.panel-height-helper svg");
+        var element = elem.find("panel-plugin-test-clock-plugin.panel-height-helper ng-transclude.panel-height-helper svg");
         ctrl.events.on('render', function () {
             render();
         });
 
         function render() {
             console.log(panel);
-            if (svg.length > 0) {
+            if (element.length > 0) {
+                console.log(element);
                 document.removeChild(svg);
+                console.log(element);
             }
-            if (panel.histData.length > 0 && panel.histData[0].items.length > 0 && svg.length < 1) {
+            if (panel.histData.length > 0 && panel.histData[0].items.length > 0 && element.length < 1) {
                 renderHist();
             }
         }
