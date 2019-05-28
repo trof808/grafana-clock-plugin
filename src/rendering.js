@@ -1,5 +1,6 @@
 import $ from 'jquery';
 import * as d3 from "d3";
+import Chart from 'chart.js';
 
 export default function link(scope, elem, attrs, ctrl) {
     const panel = ctrl.panel;
@@ -11,8 +12,29 @@ export default function link(scope, elem, attrs, ctrl) {
     function render() {
         console.log(panel);
         if (panel.histData.length > 0 && panel.histData[0].items.length > 0) {
-            renderHist();
+            renderHist2();
         }
+    }
+
+    function renderHist2() {
+        const container = elem.find('div.panel-content > .panel-height-helper');
+        var $tooltip = $('<canvas id="myChart" width="400" height="400"></canvas>');
+        container.appendChild($tooltip);
+        var ctx = document.getElementById('myChart').getContext('2d');
+        var myBarChart = new Chart(ctx, {
+            type: 'bar',
+            data: panel.histData[0].items,
+            options: {
+                scales: {
+                    yAxes: [{
+                        ticks: {
+                            beginAtZero: true
+                        }
+                    }]
+                }
+            }
+        });
+        myBarChart.render();
     }
 
     function renderHist() {

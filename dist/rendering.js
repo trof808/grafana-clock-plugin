@@ -1,9 +1,9 @@
 'use strict';
 
-System.register(['jquery', 'd3'], function (_export, _context) {
+System.register(['jquery', 'd3', 'chart.js'], function (_export, _context) {
     "use strict";
 
-    var $, d3;
+    var $, d3, Chart;
     function link(scope, elem, attrs, ctrl) {
         var panel = ctrl.panel;
 
@@ -14,8 +14,29 @@ System.register(['jquery', 'd3'], function (_export, _context) {
         function render() {
             console.log(panel);
             if (panel.histData.length > 0 && panel.histData[0].items.length > 0) {
-                renderHist();
+                renderHist2();
             }
+        }
+
+        function renderHist2() {
+            var container = elem.find('div.panel-content > .panel-height-helper');
+            var $tooltip = $('<canvas id="myChart" width="400" height="400"></canvas>');
+            container.appendChild($tooltip);
+            var ctx = document.getElementById('myChart').getContext('2d');
+            var myBarChart = new Chart(ctx, {
+                type: 'bar',
+                data: panel.histData[0].items,
+                options: {
+                    scales: {
+                        yAxes: [{
+                            ticks: {
+                                beginAtZero: true
+                            }
+                        }]
+                    }
+                }
+            });
+            myBarChart.render();
         }
 
         function renderHist() {
@@ -81,6 +102,8 @@ System.register(['jquery', 'd3'], function (_export, _context) {
             $ = _jquery.default;
         }, function (_d) {
             d3 = _d;
+        }, function (_chartJs) {
+            Chart = _chartJs.default;
         }],
         execute: function () {}
     };
