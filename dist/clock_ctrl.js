@@ -151,7 +151,6 @@ System.register(['app/plugins/sdk', 'moment', 'lodash', './rendering'], function
         }, {
           key: 'link',
           value: function link(scope, elem, attrs, ctrl) {
-            console.log(scope, elem, attrs, ctrl);
             rendering(scope, elem, attrs, ctrl);
           }
         }, {

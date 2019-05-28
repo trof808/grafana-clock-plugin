@@ -79,7 +79,6 @@ export class ClockCtrl extends MetricsPanelCtrl {
 
 
   link(scope, elem, attrs, ctrl) {
-    console.log(scope, elem, attrs, ctrl);
     rendering(scope, elem, attrs, ctrl);
   }
 
