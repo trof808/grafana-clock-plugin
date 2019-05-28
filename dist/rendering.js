@@ -55,17 +55,21 @@ System.register(['jquery', 'd3'], function (_export, _context) {
             var svg = d3.select("panel-plugin-test-clock-plugin.panel-height-helper ng-transclude.panel-height-helper").append("svg").attr("width", width + margin.left + margin.right).attr("height", height + margin.top + margin.bottom).append("g").attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
             var bar = svg.selectAll(".bar").data(data).enter().append("g").attr("class", "bar").attr("transform", function (d) {
-                return "translate(" + x(d.x) + "," + y(d.y) + ")";
+                return "translate(" + x(d.x0) + "," + y(d.length) + ")";
             });
 
-            bar.append("rect").attr("x", 1).attr("width", x(data[0].dx) - x(0) - 1).attr("height", function (d) {
-                return height - y(d.y);
+            bar.append("rect").attr("x", 1).attr("width", function (d) {
+                return x(d.x1) - x(d.x0) - 1;
+            }).attr("height", function (d) {
+                return height - y(d.length);
             }).attr("fill", function (d) {
-                return colorScale(d.y);
+                return colorScale(d.length);
             });
 
-            bar.append("text").attr("dy", ".75em").attr("y", -12).attr("x", (x(data[0].dx) - x(0)) / 2).attr("text-anchor", "middle").text(function (d) {
-                return formatCount(d.y);
+            bar.append("text").attr("dy", ".75em").attr("y", -12).attr("x", function (d) {
+                return (x(d.x1) - x(d.x0)) / 2;
+            }).attr("text-anchor", "middle").text(function (d) {
+                return formatCount(d.length);
             });
 
             svg.append("g").attr("class", "x axis").attr("transform", "translate(0," + height + ")").call(xAxis);
