@@ -55,7 +55,7 @@ System.register(['jquery', 'd3'], function (_export, _context) {
             var svg = d3.select("panel-plugin-test-clock-plugin.panel-height-helper ng-transclude.panel-height-helper").append("svg").attr("width", width + margin.left + margin.right).attr("height", height + margin.top + margin.bottom).append("g").attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
             var bar = svg.selectAll(".bar").data(data).enter().append("g").attr("class", "bar").attr("transform", function (d) {
-                return "translate(" + x(d.x0) + "," + y(d.length) + ")";
+                return "translate(" + x(d.x0) + "," + y(0) + ")";
             });
 
             bar.append("rect").attr("x", 1).attr("width", function (d) {

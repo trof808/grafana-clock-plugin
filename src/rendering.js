@@ -61,7 +61,7 @@ export default function link(scope, elem, attrs, ctrl) {
             .data(data)
             .enter().append("g")
             .attr("class", "bar")
-            .attr("transform", function(d) { return "translate(" + x(d.x0) + "," + y(d.length) + ")"; });
+            .attr("transform", function(d) { return "translate(" + x(d.x0) + "," + y(0) + ")"; });
 
         bar.append("rect")
             .attr("x", 1)
