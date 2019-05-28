@@ -13,7 +13,37 @@ const panelDefaults = {
 export class ClockCtrl extends MetricsPanelCtrl {
   constructor($scope, $injector) {
     super($scope, $injector);
+      this.$rootScope = $rootScope;
+      this.hiddenSeries = {};
+
+      var panelDefaults = {
+        pieType: 'hist',
+        legend: {
+            show: true, // disable/enable legend
+            values: true
+        },
+        links: [],
+        datasource: null,
+        maxDataPoints: 3,
+        interval: null,
+        targets: [{}],
+        cacheTimeout: null,
+        nullPointMode: 'connected',
+        legendType: 'Under graph',
+        breakPoint: '50%',
+        aliasColors: {},
+        format: 'short',
+        valueName: 'current',
+        strokeWidth: 1,
+        fontSize: '80%',
+        histData: {},
+        combine: {
+            threshold: 0.0,
+            label: 'Others'
+        }
+    };
     _.defaults(this.panel, panelDefaults);
+    _.defaults(this.panel.legend, panelDefaults.legend);
     this.updateClock();
 
     this.events.on('render', this.onRender.bind(this));
@@ -22,12 +52,14 @@ export class ClockCtrl extends MetricsPanelCtrl {
 
   onRender() {
       this.data = this.parseData(this.series);
+      this.panel.histData = data;
   }
 
   _onDataReceived(data) {
       console.log(data);
       this.series = data;
       this.data = this.parseData(data);
+      this.panel.histData = data;
       this.render(this.data);
   }
 

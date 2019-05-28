@@ -80,7 +80,37 @@ System.register(['app/plugins/sdk', 'moment', 'lodash', './rendering'], function
 
           var _this = _possibleConstructorReturn(this, (ClockCtrl.__proto__ || Object.getPrototypeOf(ClockCtrl)).call(this, $scope, $injector));
 
+          _this.$rootScope = $rootScope;
+          _this.hiddenSeries = {};
+
+          var panelDefaults = {
+            pieType: 'hist',
+            legend: {
+              show: true, // disable/enable legend
+              values: true
+            },
+            links: [],
+            datasource: null,
+            maxDataPoints: 3,
+            interval: null,
+            targets: [{}],
+            cacheTimeout: null,
+            nullPointMode: 'connected',
+            legendType: 'Under graph',
+            breakPoint: '50%',
+            aliasColors: {},
+            format: 'short',
+            valueName: 'current',
+            strokeWidth: 1,
+            fontSize: '80%',
+            histData: {},
+            combine: {
+              threshold: 0.0,
+              label: 'Others'
+            }
+          };
           _.defaults(_this.panel, panelDefaults);
+          _.defaults(_this.panel.legend, panelDefaults.legend);
           _this.updateClock();
 
           _this.events.on('render', _this.onRender.bind(_this));
@@ -92,6 +122,7 @@ System.register(['app/plugins/sdk', 'moment', 'lodash', './rendering'], function
           key: 'onRender',
           value: function onRender() {
             this.data = this.parseData(this.series);
+            this.panel.histData = data;
           }
         }, {
           key: '_onDataReceived',
@@ -99,6 +130,7 @@ System.register(['app/plugins/sdk', 'moment', 'lodash', './rendering'], function
             console.log(data);
             this.series = data;
             this.data = this.parseData(data);
+            this.panel.histData = data;
             this.render(this.data);
           }
         }, {
