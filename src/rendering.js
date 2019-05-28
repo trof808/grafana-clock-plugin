@@ -10,6 +10,7 @@ export default function link(scope, elem, attrs, ctrl) {
 
     function render() {
         console.log(panel);
+        renderHist();
     }
 
     function renderHist() {

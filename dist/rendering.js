@@ -13,6 +13,7 @@ System.register(['jquery', 'd3'], function (_export, _context) {
 
         function render() {
             console.log(panel);
+            renderHist();
         }
 
         function renderHist() {
