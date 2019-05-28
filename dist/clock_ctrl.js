@@ -91,6 +91,11 @@ System.register(['app/plugins/sdk', 'moment', 'lodash'], function (_export, _con
             console.log(data);
           }
         }, {
+          key: 'link',
+          value: function link(scope, elem, attrs, ctrl) {
+            console.log(scope, elem, attrs, ctrl);
+          }
+        }, {
           key: 'onInitEditMode',
           value: function onInitEditMode() {
             this.addEditorTab('Options', 'public/plugins/test-clock-plugin/editor.html', 2);

@@ -24,6 +24,10 @@ export class ClockCtrl extends MetricsPanelCtrl {
       console.log(data);
   }
 
+  link(scope, elem, attrs, ctrl) {
+    console.log(scope, elem, attrs, ctrl);
+  }
+
   onInitEditMode() {
     this.addEditorTab('Options', 'public/plugins/test-clock-plugin/editor.html', 2);
   }
