@@ -31,7 +31,7 @@ export default function link(scope, elem, attrs, ctrl) {
             .range([0, width]);
 
         var data = d3.histogram()
-            .bins(x.ticks(20))
+            .thresholds(x.ticks(20))
             (values);
 
         console.log(x);
