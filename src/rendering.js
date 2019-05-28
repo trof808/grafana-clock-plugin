@@ -10,14 +10,15 @@ export default function link(scope, elem, attrs, ctrl) {
     function render() {
         console.log(panel);
         const element = document.querySelectorAll("panel-plugin-test-clock-plugin.panel-height-helper ng-transclude.panel-height-helper svg");
-        if (element.length > 0) {
-            console.log(element);
-            element[0].remove();
-            console.log(element);
-        }
-        if (panel.histData.length > 0 && panel.histData[0].items.length > 0 && element.length < 1) {
-            renderHist();
-        }
+        // if (element.length > 0) {
+        //     console.log(element);
+        //     element[0].remove();
+        //     console.log(element);
+        // }
+        // if (panel.histData.length > 0 && panel.histData[0].items.length > 0 && element.length < 1) {
+        //     renderHist();
+        // }
+        renderHist();
     }
 
     function renderHist() {
@@ -54,7 +55,7 @@ export default function link(scope, elem, attrs, ctrl) {
 
         var xAxis = d3.axisBottom(x);
 
-        var svg = d3.select("panel-plugin-test-clock-plugin.panel-height-helper ng-transclude.panel-height-helper").append("svg")
+        var svg = d3.select("panel-plugin-test-clock-plugin.panel-height-helper ng-transclude.panel-height-helper").enter().append("svg")
             .attr("width", width + margin.left + margin.right)
             .attr("height", height + margin.top + margin.bottom)
             .append("g")
