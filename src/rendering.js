@@ -30,7 +30,7 @@ export default function link(scope, elem, attrs, ctrl) {
             .domain(x.domain())
             .thresholds(x.ticks(d3.timeWeek));
 
-        var svg = d3.select(elem).append("svg")
+        var svg = d3.select("div.panel-content").append("svg")
             .attr("width", width + margin.left + margin.right)
             .attr("height", height + margin.top + margin.bottom)
             .append("g")
