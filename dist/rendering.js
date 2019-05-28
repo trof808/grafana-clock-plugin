@@ -12,16 +12,9 @@ System.register(['jquery', 'd3'], function (_export, _context) {
 
         function render() {
             console.log(panel);
-            var element = document.querySelectorAll("panel-plugin-test-clock-plugin.panel-height-helper ng-transclude.panel-height-helper svg");
-            // if (element.length > 0) {
-            //     console.log(element);
-            //     element[0].remove();
-            //     console.log(element);
-            // }
-            // if (panel.histData.length > 0 && panel.histData[0].items.length > 0 && element.length < 1) {
-            //     renderHist();
-            // }
-            renderHist();
+            if (panel.histData.length > 0 && panel.histData[0].items.length > 0) {
+                renderHist();
+            }
         }
 
         function renderHist() {
