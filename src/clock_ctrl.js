@@ -16,14 +16,35 @@ export class ClockCtrl extends MetricsPanelCtrl {
     _.defaults(this.panel, panelDefaults);
     this.updateClock();
 
-    this.events.on(
-        'data-received', this._onDataReceived.bind(this)
-    );
+    this.events.on('render', this.onRender.bind(this));
+    this.events.on('data-received', this._onDataReceived.bind(this));
+  }
+
+  onRender() {
+      this.data = this.parseData(this.series);
   }
 
   _onDataReceived(data) {
       console.log(data);
+      this.series = data;
+      this.data = this.parseData(data);
+      this.render(this.data);
   }
+
+  parseData(data) {
+    return _.map(data, (d ,i) => {
+      return {
+        title: `data ${i}`,
+        items: _.map(d.row, (r, j) => {
+          return {
+            x: moment(r[0]),
+            y: r[1]
+          }
+        })
+      }
+    })
+  }
+
 
   link(scope, elem, attrs, ctrl) {
     console.log(scope, elem, attrs, ctrl);

@@ -83,14 +83,38 @@ System.register(['app/plugins/sdk', 'moment', 'lodash', './rendering'], function
           _.defaults(_this.panel, panelDefaults);
           _this.updateClock();
 
+          _this.events.on('render', _this.onRender.bind(_this));
           _this.events.on('data-received', _this._onDataReceived.bind(_this));
           return _this;
         }
 
         _createClass(ClockCtrl, [{
+          key: 'onRender',
+          value: function onRender() {
+            this.data = this.parseData(this.series);
+          }
+        }, {
           key: '_onDataReceived',
           value: function _onDataReceived(data) {
             console.log(data);
+            this.series = data;
+            this.data = this.parseData(data);
+            this.render(this.data);
+          }
+        }, {
+          key: 'parseData',
+          value: function parseData(data) {
+            return _.map(data, function (d, i) {
+              return {
+                title: 'data ' + i,
+                items: _.map(d.row, function (r, j) {
+                  return {
+                    x: moment(r[0]),
+                    y: r[1]
+                  };
+                })
+              };
+            });
           }
         }, {
           key: 'link',

@@ -14,6 +14,9 @@ export default function link(scope, elem, attrs, ctrl) {
     function render() {
         console.log(elem);
         console.log(panel);
+    }
+
+    function renderHist() {
         var margin = {top: 10, right: 30, bottom: 30, left: 30},
             width = 960 - margin.left - margin.right,
             height = 500 - margin.top - margin.bottom;

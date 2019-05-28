@@ -93,8 +93,8 @@
       <ObjectId>2200</ObjectId>
       <Comment>standard public schema</Comment>
       <Owner>postgres</Owner>
-      <IntrospectionTimestamp>2019-05-28.09:33:29.609</IntrospectionTimestamp>
-      <IntrospectionStateNumber>701</IntrospectionStateNumber>
+      <IntrospectionTimestamp>2019-05-28.11:26:47.706</IntrospectionTimestamp>
+      <IntrospectionStateNumber>739</IntrospectionStateNumber>
       <Current>1</Current>
       <Visible>1</Visible>
     </schema>
@@ -270,17 +270,22 @@
       <Owner>postgres</Owner>
       <StateNumber>625</StateNumber>
     </table>
-    <table id="43" parent="18" name="transaction">
+    <table id="43" parent="18" name="flaky_dates_count">
+      <ObjectId>24809</ObjectId>
+      <Owner>postgres</Owner>
+      <StateNumber>739</StateNumber>
+    </table>
+    <table id="44" parent="18" name="transaction">
       <ObjectId>24749</ObjectId>
       <Owner>postgres</Owner>
       <StateNumber>694</StateNumber>
     </table>
-    <table id="44" parent="18" name="transaction_type">
+    <table id="45" parent="18" name="transaction_type">
       <ObjectId>24579</ObjectId>
       <Owner>postgres</Owner>
       <StateNumber>628</StateNumber>
     </table>
-    <routine id="45" parent="18" name="update_modified_column">
+    <routine id="46" parent="18" name="update_modified_column">
       <ObjectId>24733</ObjectId>
       <Owner>postgres</Owner>
       <SourceTextLength>56</SourceTextLength>
@@ -291,7 +296,7 @@
       <RoutineKind>function</RoutineKind>
       <Cost>100.0</Cost>
     </routine>
-    <column id="46" parent="36" name="account_id">
+    <column id="47" parent="36" name="account_id">
       <Position>1</Position>
       <DataType>bigint|0s</DataType>
       <NotNull>1</NotNull>
@@ -300,90 +305,90 @@
       <TypeId>20</TypeId>
       <SequenceName>account_accountid_seq</SequenceName>
     </column>
-    <column id="47" parent="36" name="title">
+    <column id="48" parent="36" name="title">
       <Position>2</Position>
       <DataType>varchar(100)|0s</DataType>
       <NotNull>1</NotNull>
       <StateNumber>596</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <column id="48" parent="36" name="num">
+    <column id="49" parent="36" name="num">
       <Position>3</Position>
       <DataType>varchar(100)|0s</DataType>
       <NotNull>1</NotNull>
       <StateNumber>608</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <column id="49" parent="36" name="amount">
+    <column id="50" parent="36" name="amount">
       <Position>4</Position>
       <DataType>double precision|0s</DataType>
       <NotNull>1</NotNull>
       <StateNumber>596</StateNumber>
       <TypeId>701</TypeId>
     </column>
-    <column id="50" parent="36" name="description">
+    <column id="51" parent="36" name="description">
       <Position>5</Position>
       <DataType>varchar(1024)|0s</DataType>
       <StateNumber>596</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <column id="51" parent="36" name="bank_id">
+    <column id="52" parent="36" name="bank_id">
       <Position>6</Position>
       <DataType>bigint|0s</DataType>
       <NotNull>1</NotNull>
       <StateNumber>596</StateNumber>
       <TypeId>20</TypeId>
     </column>
-    <column id="52" parent="36" name="currency_id">
+    <column id="53" parent="36" name="currency_id">
       <Position>7</Position>
       <DataType>bigint|0s</DataType>
       <NotNull>1</NotNull>
       <StateNumber>596</StateNumber>
       <TypeId>20</TypeId>
     </column>
-    <column id="53" parent="36" name="account_type_id">
+    <column id="54" parent="36" name="account_type_id">
       <Position>8</Position>
       <DataType>bigint|0s</DataType>
       <NotNull>1</NotNull>
       <StateNumber>606</StateNumber>
       <TypeId>20</TypeId>
     </column>
-    <column id="54" parent="36" name="created_at">
+    <column id="55" parent="36" name="created_at">
       <Position>9</Position>
       <DataType>timestamp|0s</DataType>
       <StateNumber>667</StateNumber>
       <DefaultExpression>CURRENT_TIMESTAMP</DefaultExpression>
       <TypeId>1114</TypeId>
     </column>
-    <column id="55" parent="36" name="updated_at">
+    <column id="56" parent="36" name="updated_at">
       <Position>10</Position>
       <DataType>timestamp|0s</DataType>
       <StateNumber>668</StateNumber>
       <DefaultExpression>CURRENT_TIMESTAMP</DefaultExpression>
       <TypeId>1114</TypeId>
     </column>
-    <index id="56" parent="36" name="account_accountid_uindex">
+    <index id="57" parent="36" name="account_accountid_uindex">
       <ObjectId>24639</ObjectId>
       <ColNames>account_id</ColNames>
       <Unique>1</Unique>
     </index>
-    <index id="57" parent="36" name="account_pkey">
+    <index id="58" parent="36" name="account_pkey">
       <ObjectId>24632</ObjectId>
       <ColNames>account_id</ColNames>
       <Unique>1</Unique>
     </index>
-    <index id="58" parent="36" name="account_num_uindex">
+    <index id="59" parent="36" name="account_num_uindex">
       <ObjectId>24656</ObjectId>
       <ColNames>num</ColNames>
       <Unique>1</Unique>
     </index>
-    <key id="59" parent="36" name="account_pkey">
+    <key id="60" parent="36" name="account_pkey">
       <ObjectId>24633</ObjectId>
       <ColNames>account_id</ColNames>
       <UnderlyingIndexName>account_pkey</UnderlyingIndexName>
       <Primary>1</Primary>
     </key>
-    <foreign-key id="60" parent="36" name="account_bank_id_fkey">
+    <foreign-key id="61" parent="36" name="account_bank_id_fkey">
       <ObjectId>24634</ObjectId>
       <ColNames>bank_id</ColNames>
       <RefTableId>24614</RefTableId>
@@ -393,7 +398,7 @@
       <RefColNames>bank_id</RefColNames>
       <OnDelete>restrict</OnDelete>
     </foreign-key>
-    <foreign-key id="61" parent="36" name="fk316pn109iutn6yqoxrqp09cpc">
+    <foreign-key id="62" parent="36" name="fk316pn109iutn6yqoxrqp09cpc">
       <ObjectId>24692</ObjectId>
       <ColNames>currency_id</ColNames>
       <RefTableId>24604</RefTableId>
@@ -402,7 +407,7 @@
       <RefKeyName>currency_pkey</RefKeyName>
       <RefColNames>currency_id</RefColNames>
     </foreign-key>
-    <foreign-key id="62" parent="36" name="account_account_type_id_fkey">
+    <foreign-key id="63" parent="36" name="account_account_type_id_fkey">
       <ObjectId>24651</ObjectId>
       <ColNames>account_type_id</ColNames>
       <RefTableId>24643</RefTableId>
@@ -412,7 +417,7 @@
       <RefColNames>account_type_id</RefColNames>
       <OnDelete>restrict</OnDelete>
     </foreign-key>
-    <trigger id="63" parent="36" name="update_at_column">
+    <trigger id="64" parent="36" name="update_at_column">
       <ObjectId>24740</ObjectId>
       <StateNumber>669</StateNumber>
       <Turn>before-row</Turn>
@@ -420,7 +425,7 @@
       <FireMode>origin</FireMode>
       <CallRoutineId>24733</CallRoutineId>
     </trigger>
-    <column id="64" parent="37" name="account_type_id">
+    <column id="65" parent="37" name="account_type_id">
       <Position>1</Position>
       <DataType>bigint|0s</DataType>
       <NotNull>1</NotNull>
@@ -429,55 +434,55 @@
       <TypeId>20</TypeId>
       <SequenceName>account_type_account_type_id_seq</SequenceName>
     </column>
-    <column id="65" parent="37" name="title">
+    <column id="66" parent="37" name="title">
       <Position>2</Position>
       <DataType>varchar(100)|0s</DataType>
       <NotNull>1</NotNull>
       <StateNumber>599</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <column id="66" parent="37" name="title_latin">
+    <column id="67" parent="37" name="title_latin">
       <Position>3</Position>
       <DataType>varchar(100)|0s</DataType>
       <StateNumber>602</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <column id="67" parent="37" name="created_at">
+    <column id="68" parent="37" name="created_at">
       <Position>4</Position>
       <DataType>timestamp|0s</DataType>
       <StateNumber>670</StateNumber>
       <DefaultExpression>CURRENT_TIMESTAMP</DefaultExpression>
       <TypeId>1114</TypeId>
     </column>
-    <column id="68" parent="37" name="updated_at">
+    <column id="69" parent="37" name="updated_at">
       <Position>5</Position>
       <DataType>timestamp|0s</DataType>
       <StateNumber>671</StateNumber>
       <DefaultExpression>CURRENT_TIMESTAMP</DefaultExpression>
       <TypeId>1114</TypeId>
     </column>
-    <index id="69" parent="37" name="account_type_account_type_id_uindex">
+    <index id="70" parent="37" name="account_type_account_type_id_uindex">
       <ObjectId>24649</ObjectId>
       <ColNames>account_type_id</ColNames>
       <Unique>1</Unique>
     </index>
-    <index id="70" parent="37" name="account_type_pkey">
+    <index id="71" parent="37" name="account_type_pkey">
       <ObjectId>24647</ObjectId>
       <ColNames>account_type_id</ColNames>
       <Unique>1</Unique>
     </index>
-    <index id="71" parent="37" name="account_type_title_uindex">
+    <index id="72" parent="37" name="account_type_title_uindex">
       <ObjectId>24650</ObjectId>
       <ColNames>title</ColNames>
       <Unique>1</Unique>
     </index>
-    <key id="72" parent="37" name="account_type_pkey">
+    <key id="73" parent="37" name="account_type_pkey">
       <ObjectId>24648</ObjectId>
       <ColNames>account_type_id</ColNames>
       <UnderlyingIndexName>account_type_pkey</UnderlyingIndexName>
       <Primary>1</Primary>
     </key>
-    <trigger id="73" parent="37" name="update_at_column">
+    <trigger id="74" parent="37" name="update_at_column">
       <ObjectId>24743</ObjectId>
       <StateNumber>672</StateNumber>
       <Turn>before-row</Turn>
@@ -485,7 +490,7 @@
       <FireMode>origin</FireMode>
       <CallRoutineId>24733</CallRoutineId>
     </trigger>
-    <column id="74" parent="38" name="bank_id">
+    <column id="75" parent="38" name="bank_id">
       <Position>1</Position>
       <DataType>bigint|0s</DataType>
       <NotNull>1</NotNull>
@@ -494,61 +499,61 @@
       <TypeId>20</TypeId>
       <SequenceName>bank_bankid_seq</SequenceName>
     </column>
-    <column id="75" parent="38" name="title">
+    <column id="76" parent="38" name="title">
       <Position>2</Position>
       <DataType>varchar(100)|0s</DataType>
       <NotNull>1</NotNull>
       <StateNumber>589</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <column id="76" parent="38" name="latin_name">
+    <column id="77" parent="38" name="latin_name">
       <Position>3</Position>
       <DataType>varchar(100)|0s</DataType>
       <NotNull>1</NotNull>
       <StateNumber>589</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <column id="77" parent="38" name="created_at">
+    <column id="78" parent="38" name="created_at">
       <Position>4</Position>
       <DataType>timestamp|0s</DataType>
       <StateNumber>663</StateNumber>
       <DefaultExpression>CURRENT_TIMESTAMP</DefaultExpression>
       <TypeId>1114</TypeId>
     </column>
-    <column id="78" parent="38" name="updated_at">
+    <column id="79" parent="38" name="updated_at">
       <Position>5</Position>
       <DataType>timestamp|0s</DataType>
       <StateNumber>664</StateNumber>
       <DefaultExpression>CURRENT_TIMESTAMP</DefaultExpression>
       <TypeId>1114</TypeId>
     </column>
-    <index id="79" parent="38" name="bank_bankid_uindex">
+    <index id="80" parent="38" name="bank_bankid_uindex">
       <ObjectId>24620</ObjectId>
       <ColNames>bank_id</ColNames>
       <Unique>1</Unique>
     </index>
-    <index id="80" parent="38" name="bank_pkey">
+    <index id="81" parent="38" name="bank_pkey">
       <ObjectId>24618</ObjectId>
       <ColNames>bank_id</ColNames>
       <Unique>1</Unique>
     </index>
-    <index id="81" parent="38" name="bank_title_uindex">
+    <index id="82" parent="38" name="bank_title_uindex">
       <ObjectId>24621</ObjectId>
       <ColNames>title</ColNames>
       <Unique>1</Unique>
     </index>
-    <index id="82" parent="38" name="bank_latin_name_uindex">
+    <index id="83" parent="38" name="bank_latin_name_uindex">
       <ObjectId>24622</ObjectId>
       <ColNames>latin_name</ColNames>
       <Unique>1</Unique>
     </index>
-    <key id="83" parent="38" name="bank_pkey">
+    <key id="84" parent="38" name="bank_pkey">
       <ObjectId>24619</ObjectId>
       <ColNames>bank_id</ColNames>
       <UnderlyingIndexName>bank_pkey</UnderlyingIndexName>
       <Primary>1</Primary>
     </key>
-    <trigger id="84" parent="38" name="update_at_column">
+    <trigger id="85" parent="38" name="update_at_column">
       <ObjectId>24737</ObjectId>
       <StateNumber>665</StateNumber>
       <Turn>before-row</Turn>
@@ -556,7 +561,7 @@
       <FireMode>origin</FireMode>
       <CallRoutineId>24733</CallRoutineId>
     </trigger>
-    <column id="85" parent="39" name="cat_id">
+    <column id="86" parent="39" name="cat_id">
       <Position>1</Position>
       <DataType>bigint|0s</DataType>
       <NotNull>1</NotNull>
@@ -565,56 +570,56 @@
       <TypeId>20</TypeId>
       <SequenceName>category_catid_seq</SequenceName>
     </column>
-    <column id="86" parent="39" name="title">
+    <column id="87" parent="39" name="title">
       <Position>2</Position>
       <DataType>varchar(100)|0s</DataType>
       <NotNull>1</NotNull>
       <StateNumber>574</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <column id="87" parent="39" name="transaction_type_id">
+    <column id="88" parent="39" name="transaction_type_id">
       <Position>3</Position>
       <DataType>bigint|0s</DataType>
       <NotNull>1</NotNull>
       <StateNumber>574</StateNumber>
       <TypeId>20</TypeId>
     </column>
-    <column id="88" parent="39" name="created_at">
+    <column id="89" parent="39" name="created_at">
       <Position>4</Position>
       <DataType>timestamp|0s</DataType>
       <StateNumber>655</StateNumber>
       <DefaultExpression>CURRENT_TIMESTAMP</DefaultExpression>
       <TypeId>1114</TypeId>
     </column>
-    <column id="89" parent="39" name="updated_at">
+    <column id="90" parent="39" name="updated_at">
       <Position>5</Position>
       <DataType>timestamp|0s</DataType>
       <StateNumber>656</StateNumber>
       <DefaultExpression>CURRENT_TIMESTAMP</DefaultExpression>
       <TypeId>1114</TypeId>
     </column>
-    <index id="90" parent="39" name="category_catid_uindex">
+    <index id="91" parent="39" name="category_catid_uindex">
       <ObjectId>24600</ObjectId>
       <ColNames>cat_id</ColNames>
       <Unique>1</Unique>
     </index>
-    <index id="91" parent="39" name="category_pkey">
+    <index id="92" parent="39" name="category_pkey">
       <ObjectId>24593</ObjectId>
       <ColNames>cat_id</ColNames>
       <Unique>1</Unique>
     </index>
-    <index id="92" parent="39" name="category_title_uindex">
+    <index id="93" parent="39" name="category_title_uindex">
       <ObjectId>24601</ObjectId>
       <ColNames>title</ColNames>
       <Unique>1</Unique>
     </index>
-    <key id="93" parent="39" name="category_pkey">
+    <key id="94" parent="39" name="category_pkey">
       <ObjectId>24594</ObjectId>
       <ColNames>cat_id</ColNames>
       <UnderlyingIndexName>category_pkey</UnderlyingIndexName>
       <Primary>1</Primary>
     </key>
-    <foreign-key id="94" parent="39" name="category_transaction_type_id_fkey">
+    <foreign-key id="95" parent="39" name="category_transaction_type_id_fkey">
       <ObjectId>24595</ObjectId>
       <ColNames>transaction_type_id</ColNames>
       <RefTableId>24579</RefTableId>
@@ -624,7 +629,7 @@
       <RefColNames>transaction_type_id</RefColNames>
       <OnDelete>restrict</OnDelete>
     </foreign-key>
-    <trigger id="95" parent="39" name="update_at_column">
+    <trigger id="96" parent="39" name="update_at_column">
       <ObjectId>24734</ObjectId>
       <StateNumber>660</StateNumber>
       <Turn>before-row</Turn>
@@ -632,31 +637,31 @@
       <FireMode>origin</FireMode>
       <CallRoutineId>24733</CallRoutineId>
     </trigger>
-    <column id="96" parent="40" name="category_cat_id">
+    <column id="97" parent="40" name="category_cat_id">
       <Position>1</Position>
       <DataType>bigint|0s</DataType>
       <NotNull>1</NotNull>
       <StateNumber>697</StateNumber>
       <TypeId>20</TypeId>
     </column>
-    <column id="97" parent="40" name="transactions_transaction_id">
+    <column id="98" parent="40" name="transactions_transaction_id">
       <Position>2</Position>
       <DataType>bigint|0s</DataType>
       <NotNull>1</NotNull>
       <StateNumber>697</StateNumber>
       <TypeId>20</TypeId>
     </column>
-    <index id="98" parent="40" name="uk_lbqpk9xga49li9mfrbx0jvw1m">
+    <index id="99" parent="40" name="uk_lbqpk9xga49li9mfrbx0jvw1m">
       <ObjectId>24797</ObjectId>
       <ColNames>transactions_transaction_id</ColNames>
       <Unique>1</Unique>
     </index>
-    <key id="99" parent="40" name="uk_lbqpk9xga49li9mfrbx0jvw1m">
+    <key id="100" parent="40" name="uk_lbqpk9xga49li9mfrbx0jvw1m">
       <ObjectId>24798</ObjectId>
       <ColNames>transactions_transaction_id</ColNames>
       <UnderlyingIndexName>uk_lbqpk9xga49li9mfrbx0jvw1m</UnderlyingIndexName>
     </key>
-    <foreign-key id="100" parent="40" name="fkb5o40hoba8wbsat917l6igj6t">
+    <foreign-key id="101" parent="40" name="fkb5o40hoba8wbsat917l6igj6t">
       <ObjectId>24804</ObjectId>
       <ColNames>category_cat_id</ColNames>
       <RefTableId>24589</RefTableId>
@@ -665,7 +670,7 @@
       <RefKeyName>category_pkey</RefKeyName>
       <RefColNames>cat_id</RefColNames>
     </foreign-key>
-    <foreign-key id="101" parent="40" name="fk2pjcn65xvcn8w9b1oh3pgtjvo">
+    <foreign-key id="102" parent="40" name="fk2pjcn65xvcn8w9b1oh3pgtjvo">
       <ObjectId>24799</ObjectId>
       <ColNames>transactions_transaction_id</ColNames>
       <RefTableId>24749</RefTableId>
@@ -674,7 +679,7 @@
       <RefKeyName>transaction_pkey</RefKeyName>
       <RefColNames>transaction_id</RefColNames>
     </foreign-key>
-    <column id="102" parent="41" name="currency_id">
+    <column id="103" parent="41" name="currency_id">
       <Position>1</Position>
       <DataType>bigint|0s</DataType>
       <NotNull>1</NotNull>
@@ -683,49 +688,49 @@
       <TypeId>20</TypeId>
       <SequenceName>currency_currency_id_seq</SequenceName>
     </column>
-    <column id="103" parent="41" name="currency_code">
+    <column id="104" parent="41" name="currency_code">
       <Position>2</Position>
       <DataType>varchar(3)|0s</DataType>
       <NotNull>1</NotNull>
       <StateNumber>583</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <column id="104" parent="41" name="created_at">
+    <column id="105" parent="41" name="created_at">
       <Position>3</Position>
       <DataType>timestamp|0s</DataType>
       <StateNumber>673</StateNumber>
       <DefaultExpression>CURRENT_TIMESTAMP</DefaultExpression>
       <TypeId>1114</TypeId>
     </column>
-    <column id="105" parent="41" name="updated_at">
+    <column id="106" parent="41" name="updated_at">
       <Position>4</Position>
       <DataType>timestamp|0s</DataType>
       <StateNumber>674</StateNumber>
       <DefaultExpression>CURRENT_TIMESTAMP</DefaultExpression>
       <TypeId>1114</TypeId>
     </column>
-    <index id="106" parent="41" name="currency_currency_id_uindex">
+    <index id="107" parent="41" name="currency_currency_id_uindex">
       <ObjectId>24610</ObjectId>
       <ColNames>currency_id</ColNames>
       <Unique>1</Unique>
     </index>
-    <index id="107" parent="41" name="currency_pkey">
+    <index id="108" parent="41" name="currency_pkey">
       <ObjectId>24608</ObjectId>
       <ColNames>currency_id</ColNames>
       <Unique>1</Unique>
     </index>
-    <index id="108" parent="41" name="currency_currency_code_uindex">
+    <index id="109" parent="41" name="currency_currency_code_uindex">
       <ObjectId>24611</ObjectId>
       <ColNames>currency_code</ColNames>
       <Unique>1</Unique>
     </index>
-    <key id="109" parent="41" name="currency_pkey">
+    <key id="110" parent="41" name="currency_pkey">
       <ObjectId>24609</ObjectId>
       <ColNames>currency_id</ColNames>
       <UnderlyingIndexName>currency_pkey</UnderlyingIndexName>
       <Primary>1</Primary>
     </key>
-    <trigger id="110" parent="41" name="update_at_column">
+    <trigger id="111" parent="41" name="update_at_column">
       <ObjectId>24746</ObjectId>
       <StateNumber>675</StateNumber>
       <Turn>before-row</Turn>
@@ -733,75 +738,95 @@
       <FireMode>origin</FireMode>
       <CallRoutineId>24733</CallRoutineId>
     </trigger>
-    <column id="111" parent="42" name="id">
+    <column id="112" parent="42" name="id">
       <Position>1</Position>
       <DataType>bigint|0s</DataType>
       <NotNull>1</NotNull>
       <StateNumber>625</StateNumber>
       <TypeId>20</TypeId>
     </column>
-    <column id="112" parent="42" name="created_at">
+    <column id="113" parent="42" name="created_at">
       <Position>2</Position>
       <DataType>timestamp|0s</DataType>
       <StateNumber>625</StateNumber>
       <TypeId>1114</TypeId>
     </column>
-    <column id="113" parent="42" name="updated_at">
+    <column id="114" parent="42" name="updated_at">
       <Position>3</Position>
       <DataType>timestamp|0s</DataType>
       <StateNumber>625</StateNumber>
       <TypeId>1114</TypeId>
     </column>
-    <column id="114" parent="42" name="image">
+    <column id="115" parent="42" name="image">
       <Position>4</Position>
       <DataType>varchar(255)|0s</DataType>
       <StateNumber>625</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <column id="115" parent="42" name="learned">
+    <column id="116" parent="42" name="learned">
       <Position>5</Position>
       <DataType>boolean|0s</DataType>
       <NotNull>1</NotNull>
       <StateNumber>625</StateNumber>
       <TypeId>16</TypeId>
     </column>
-    <column id="116" parent="42" name="learned_at">
+    <column id="117" parent="42" name="learned_at">
       <Position>6</Position>
       <DataType>timestamp|0s</DataType>
       <StateNumber>625</StateNumber>
       <TypeId>1114</TypeId>
     </column>
-    <column id="117" parent="42" name="translation">
+    <column id="118" parent="42" name="translation">
       <Position>7</Position>
       <DataType>varchar(255)|0s</DataType>
       <StateNumber>625</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <column id="118" parent="42" name="translation_visible">
+    <column id="119" parent="42" name="translation_visible">
       <Position>8</Position>
       <DataType>boolean|0s</DataType>
       <NotNull>1</NotNull>
       <StateNumber>625</StateNumber>
       <TypeId>16</TypeId>
     </column>
-    <column id="119" parent="42" name="word">
+    <column id="120" parent="42" name="word">
       <Position>9</Position>
       <DataType>varchar(255)|0s</DataType>
       <StateNumber>625</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <index id="120" parent="42" name="dictionary_pkey">
+    <index id="121" parent="42" name="dictionary_pkey">
       <ObjectId>24675</ObjectId>
       <ColNames>id</ColNames>
       <Unique>1</Unique>
     </index>
-    <key id="121" parent="42" name="dictionary_pkey">
+    <key id="122" parent="42" name="dictionary_pkey">
       <ObjectId>24676</ObjectId>
       <ColNames>id</ColNames>
       <UnderlyingIndexName>dictionary_pkey</UnderlyingIndexName>
       <Primary>1</Primary>
     </key>
-    <column id="122" parent="43" name="transaction_id">
+    <column id="123" parent="43" name="date">
+      <Position>1</Position>
+      <DataType>timestamp|0s</DataType>
+      <StateNumber>729</StateNumber>
+      <TypeId>1114</TypeId>
+    </column>
+    <column id="124" parent="43" name="flakycount">
+      <Position>2</Position>
+      <DataType>integer|0s</DataType>
+      <StateNumber>729</StateNumber>
+      <TypeId>23</TypeId>
+    </column>
+    <column id="125" parent="43" name="created_at">
+      <Position>3</Position>
+      <DataType>timestamp|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>739</StateNumber>
+      <DefaultExpression>CURRENT_TIMESTAMP</DefaultExpression>
+      <TypeId>1114</TypeId>
+    </column>
+    <column id="126" parent="44" name="transaction_id">
       <Position>1</Position>
       <DataType>bigint|0s</DataType>
       <NotNull>1</NotNull>
@@ -810,48 +835,48 @@
       <TypeId>20</TypeId>
       <SequenceName>transaction_transaction_id_seq1</SequenceName>
     </column>
-    <column id="123" parent="43" name="date">
+    <column id="127" parent="44" name="date">
       <Position>2</Position>
       <DataType>timestamp|0s</DataType>
       <NotNull>1</NotNull>
       <StateNumber>684</StateNumber>
       <TypeId>1114</TypeId>
     </column>
-    <column id="124" parent="43" name="description">
+    <column id="128" parent="44" name="description">
       <Position>3</Position>
       <DataType>varchar(255)|0s</DataType>
       <StateNumber>684</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <column id="125" parent="43" name="transaction_type_id">
+    <column id="129" parent="44" name="transaction_type_id">
       <Position>5</Position>
       <DataType>bigint|0s</DataType>
       <NotNull>1</NotNull>
       <StateNumber>684</StateNumber>
       <TypeId>20</TypeId>
     </column>
-    <column id="126" parent="43" name="cat_id">
+    <column id="130" parent="44" name="cat_id">
       <Position>6</Position>
       <DataType>bigint|0s</DataType>
       <NotNull>1</NotNull>
       <StateNumber>684</StateNumber>
       <TypeId>20</TypeId>
     </column>
-    <column id="127" parent="43" name="account_id">
+    <column id="131" parent="44" name="account_id">
       <Position>7</Position>
       <DataType>bigint|0s</DataType>
       <NotNull>1</NotNull>
       <StateNumber>684</StateNumber>
       <TypeId>20</TypeId>
     </column>
-    <column id="128" parent="43" name="currency_id">
+    <column id="132" parent="44" name="currency_id">
       <Position>8</Position>
       <DataType>bigint|0s</DataType>
       <NotNull>1</NotNull>
       <StateNumber>684</StateNumber>
       <TypeId>20</TypeId>
     </column>
-    <column id="129" parent="43" name="created_at">
+    <column id="133" parent="44" name="created_at">
       <Position>9</Position>
       <DataType>timestamp|0s</DataType>
       <NotNull>1</NotNull>
@@ -859,7 +884,7 @@
       <DefaultExpression>CURRENT_TIMESTAMP</DefaultExpression>
       <TypeId>1114</TypeId>
     </column>
-    <column id="130" parent="43" name="updated_at">
+    <column id="134" parent="44" name="updated_at">
       <Position>10</Position>
       <DataType>timestamp|0s</DataType>
       <NotNull>1</NotNull>
@@ -867,29 +892,29 @@
       <DefaultExpression>CURRENT_TIMESTAMP</DefaultExpression>
       <TypeId>1114</TypeId>
     </column>
-    <column id="131" parent="43" name="amount">
+    <column id="135" parent="44" name="amount">
       <Position>11</Position>
       <DataType>real|0s</DataType>
       <StateNumber>687</StateNumber>
       <TypeId>700</TypeId>
     </column>
-    <index id="132" parent="43" name="transaction_pkey">
+    <index id="136" parent="44" name="transaction_pkey">
       <ObjectId>24756</ObjectId>
       <ColNames>transaction_id</ColNames>
       <Unique>1</Unique>
     </index>
-    <index id="133" parent="43" name="transaction_transaction_id_uindex">
+    <index id="137" parent="44" name="transaction_transaction_id_uindex">
       <ObjectId>24778</ObjectId>
       <ColNames>transaction_id</ColNames>
       <Unique>1</Unique>
     </index>
-    <key id="134" parent="43" name="transaction_pkey">
+    <key id="138" parent="44" name="transaction_pkey">
       <ObjectId>24757</ObjectId>
       <ColNames>transaction_id</ColNames>
       <UnderlyingIndexName>transaction_pkey</UnderlyingIndexName>
       <Primary>1</Primary>
     </key>
-    <foreign-key id="135" parent="43" name="transaction_transaction_type_id_fkey">
+    <foreign-key id="139" parent="44" name="transaction_transaction_type_id_fkey">
       <ObjectId>24758</ObjectId>
       <ColNames>transaction_type_id</ColNames>
       <RefTableId>24579</RefTableId>
@@ -899,7 +924,7 @@
       <RefColNames>transaction_type_id</RefColNames>
       <OnDelete>restrict</OnDelete>
     </foreign-key>
-    <foreign-key id="136" parent="43" name="transaction_cat_id_fkey">
+    <foreign-key id="140" parent="44" name="transaction_cat_id_fkey">
       <ObjectId>24763</ObjectId>
       <ColNames>cat_id</ColNames>
       <RefTableId>24589</RefTableId>
@@ -909,7 +934,7 @@
       <RefColNames>cat_id</RefColNames>
       <OnDelete>restrict</OnDelete>
     </foreign-key>
-    <foreign-key id="137" parent="43" name="transaction_account_id_fkey">
+    <foreign-key id="141" parent="44" name="transaction_account_id_fkey">
       <ObjectId>24768</ObjectId>
       <ColNames>account_id</ColNames>
       <RefTableId>24625</RefTableId>
@@ -919,7 +944,7 @@
       <RefColNames>account_id</RefColNames>
       <OnDelete>restrict</OnDelete>
     </foreign-key>
-    <foreign-key id="138" parent="43" name="transaction_currency_id_fkey">
+    <foreign-key id="142" parent="44" name="transaction_currency_id_fkey">
       <ObjectId>24773</ObjectId>
       <ColNames>currency_id</ColNames>
       <RefTableId>24604</RefTableId>
@@ -929,7 +954,7 @@
       <RefColNames>currency_id</RefColNames>
       <OnDelete>restrict</OnDelete>
     </foreign-key>
-    <column id="139" parent="44" name="transaction_type_id">
+    <column id="143" parent="45" name="transaction_type_id">
       <Position>1</Position>
       <DataType>bigint|0s</DataType>
       <NotNull>1</NotNull>
@@ -938,47 +963,47 @@
       <TypeId>20</TypeId>
       <SequenceName>transaction_type_transaction_type_id_seq</SequenceName>
     </column>
-    <column id="140" parent="44" name="title">
+    <column id="144" parent="45" name="title">
       <Position>2</Position>
       <DataType>varchar(100)|0s</DataType>
       <NotNull>1</NotNull>
       <StateNumber>571</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <column id="141" parent="44" name="created_at">
+    <column id="145" parent="45" name="created_at">
       <Position>3</Position>
       <DataType>timestamp|0s</DataType>
       <StateNumber>627</StateNumber>
       <TypeId>1114</TypeId>
     </column>
-    <column id="142" parent="44" name="updated_at">
+    <column id="146" parent="45" name="updated_at">
       <Position>4</Position>
       <DataType>timestamp|0s</DataType>
       <StateNumber>628</StateNumber>
       <TypeId>1114</TypeId>
     </column>
-    <index id="143" parent="44" name="transaction_type_pkey">
+    <index id="147" parent="45" name="transaction_type_pkey">
       <ObjectId>24583</ObjectId>
       <ColNames>transaction_type_id</ColNames>
       <Unique>1</Unique>
     </index>
-    <index id="144" parent="44" name="transaction_type_transaction_type_id_uindex">
+    <index id="148" parent="45" name="transaction_type_transaction_type_id_uindex">
       <ObjectId>24585</ObjectId>
       <ColNames>transaction_type_id</ColNames>
       <Unique>1</Unique>
     </index>
-    <index id="145" parent="44" name="transaction_type_title_uindex">
+    <index id="149" parent="45" name="transaction_type_title_uindex">
       <ObjectId>24586</ObjectId>
       <ColNames>title</ColNames>
       <Unique>1</Unique>
     </index>
-    <key id="146" parent="44" name="transaction_type_pkey">
+    <key id="150" parent="45" name="transaction_type_pkey">
       <ObjectId>24584</ObjectId>
       <ColNames>transaction_type_id</ColNames>
       <UnderlyingIndexName>transaction_type_pkey</UnderlyingIndexName>
       <Primary>1</Primary>
     </key>
-    <argument id="147" parent="45">
+    <argument id="151" parent="46">
       <ArgumentDirection>R</ArgumentDirection>
       <DataType>trigger|0s</DataType>
     </argument>
