@@ -49,11 +49,9 @@ export default function link(scope, elem, attrs, ctrl) {
             .domain([0, yMax])
             .range([height, 0]);
 
-        var xAxis = d3.svg.axis()
-            .scale(x)
-            .orient("bottom");
+        var xAxis = d3.axisBottom(x);
 
-        var svg = d3.select("body").append("svg")
+        var svg = d3.select("panel-plugin-test-clock-plugin..panel-height-helper > ng-transclude.panel-height-helper").append("svg")
             .attr("width", width + margin.left + margin.right)
             .attr("height", height + margin.top + margin.bottom)
             .append("g")
