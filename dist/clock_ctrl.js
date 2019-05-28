@@ -122,7 +122,7 @@ System.register(['app/plugins/sdk', 'moment', 'lodash', './rendering'], function
           key: 'onRender',
           value: function onRender() {
             this.data = this.parseData(this.series);
-            this.panel.histData = data;
+            this.panel.histData = this.data;
           }
         }, {
           key: '_onDataReceived',
