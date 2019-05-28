@@ -1,9 +1,9 @@
 'use strict';
 
-System.register(['jquery', 'd3', 'plotly.js-dist'], function (_export, _context) {
+System.register(['jquery', 'd3'], function (_export, _context) {
     "use strict";
 
-    var $, d3, Plotly;
+    var $, d3;
     function link(scope, elem, attrs, ctrl) {
         var panel = ctrl.panel;
 
@@ -14,18 +14,8 @@ System.register(['jquery', 'd3', 'plotly.js-dist'], function (_export, _context)
         function render() {
             console.log(panel);
             if (panel.histData.length > 0 && panel.histData[0].items.length > 0) {
-                renderHist2();
+                renderHist();
             }
-        }
-
-        function renderHist2() {
-            var data = [{
-                x: ['giraffes', 'orangutans', 'monkeys'],
-                y: [20, 14, 23],
-                type: 'bar'
-            }];
-
-            Plotly.newPlot('panel-plugin-test-clock-plugin.panel-height-helper ng-transclude.panel-height-helper', data);
         }
 
         function renderHist() {
@@ -34,34 +24,33 @@ System.register(['jquery', 'd3', 'plotly.js-dist'], function (_export, _context)
                 return d.y;
             });
             var formatCount = d3.format(",.0f");
-            var color = "steelblue";
+
             var margin = { top: 10, right: 30, bottom: 30, left: 30 },
                 width = 960 - margin.left - margin.right,
                 height = 500 - margin.top - margin.bottom;
 
             var max = d3.max(values);
             var min = d3.min(values);
-            var x = d3.scaleLinear().domain([min, max]).range([0, width]);
+
+            var x = d3.scaleLinear().domain([min, max]).range([margin.left, width - margin.right]);
+
+            var y = d3.scaleLinear().range([height - margin.bottom, margin.top]);
 
             var data = d3.histogram().thresholds(x.ticks(values.length))(values);
 
             console.log(x);
             console.log(data);
+
             var yMax = d3.max(data, function (d) {
-                return d.length;
+                return d[0];
             });
             var yMin = d3.min(data, function (d) {
-                return d.length;
+                return d[0];
             });
-            var colorScale = d3.scaleLinear().domain([yMin, yMax]).range([d3.rgb(color).brighter(), d3.rgb(color).darker()]);
 
             console.log(yMax);
             console.log(yMin);
 
-            var y = d3.scaleLinear().range([height, 0]);
-
-            console.log(y);
-            console.log(y(30));
             var xAxis = d3.axisBottom(x);
 
             var svg = d3.select("panel-plugin-test-clock-plugin.panel-height-helper ng-transclude.panel-height-helper").append("svg").attr("width", width + margin.left + margin.right).attr("height", height + margin.top + margin.bottom).append("g").attr("transform", "translate(" + margin.left + "," + margin.top + ")");
@@ -74,9 +63,7 @@ System.register(['jquery', 'd3', 'plotly.js-dist'], function (_export, _context)
                 return x(d.x1) - x(d.x0) - 1;
             }).attr("height", function (d) {
                 return height - y(d[0]);
-            }).attr("fill", function (d) {
-                return colorScale(d[0]);
-            });
+            }).attr("fill", '#0af');
 
             bar.append("text").attr("dy", ".75em").attr("y", -12).attr("x", function (d) {
                 return (x(d.x1) - x(d.x0)) / 2;
@@ -95,8 +82,6 @@ System.register(['jquery', 'd3', 'plotly.js-dist'], function (_export, _context)
             $ = _jquery.default;
         }, function (_d) {
             d3 = _d;
-        }, function (_plotlyJsDist) {
-            Plotly = _plotlyJsDist.default;
         }],
         execute: function () {}
     };

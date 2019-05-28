@@ -3,8 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="5a4fa0fb-998e-4216-9845-ae948e90f9d2" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/module.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/module.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/rendering.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/rendering.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -90,7 +89,7 @@
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="HTML" value="4" />
-          <entry key="JavaScript" value="1348" />
+          <entry key="JavaScript" value="1369" />
           <entry key="PLAIN_TEXT" value="7" />
           <entry key="SQL" value="11" />
           <entry key="Scratch" value="83" />
@@ -115,8 +114,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/rendering.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="394">
-              <caret line="27" column="108" selection-start-line="27" selection-start-column="108" selection-end-line="27" selection-end-column="108" />
+            <state relative-caret-position="464">
+              <caret line="75" lean-forward="true" selection-start-line="75" selection-end-line="75" />
               <folding>
                 <element signature="e#0#23#0" expanded="true" />
               </folding>
@@ -135,11 +134,7 @@
       </file>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/module.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret column="15" selection-start-column="15" selection-end-column="15" />
-            </state>
-          </provider>
+          <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
@@ -190,11 +185,11 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/module.html" />
         <option value="$PROJECT_DIR$/src/editor.html" />
         <option value="$PROJECT_DIR$/src/homicides.csv" />
         <option value="$APPLICATION_CONFIG_DIR$/consoles/db/a047a5cf-981a-43c6-989e-f38ab59bbba7/console.sql" />
         <option value="$PROJECT_DIR$/src/clock_ctrl.js" />
+        <option value="$PROJECT_DIR$/src/module.html" />
         <option value="$PROJECT_DIR$/src/rendering.js" />
       </list>
     </option>
@@ -233,17 +228,6 @@
             <path>
               <item name="grafana-test-plugin" type="b2602c69:ProjectViewProjectNode" />
               <item name="grafana-test-plugin" type="462c0819:PsiDirectoryNode" />
-              <item name="node_modules" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="grafana-test-plugin" type="b2602c69:ProjectViewProjectNode" />
-              <item name="grafana-test-plugin" type="462c0819:PsiDirectoryNode" />
-              <item name="node_modules" type="462c0819:PsiDirectoryNode" />
-              <item name="plotly.js-dist" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="grafana-test-plugin" type="b2602c69:ProjectViewProjectNode" />
-              <item name="grafana-test-plugin" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
@@ -259,7 +243,7 @@
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1559042735610" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1559043906093" />
     <property name="database.console.LAST_STATE" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
@@ -289,12 +273,12 @@
       <option name="presentableId" value="Default" />
       <updated>1558966747422</updated>
       <workItem from="1558966750533" duration="2961000" />
-      <workItem from="1559024438181" duration="12625000" />
+      <workItem from="1559024438181" duration="13691000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="15586000" />
+    <option name="totallyTimeSpent" value="16652000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -309,7 +293,7 @@
     <frame x="0" y="23" width="1680" height="1027" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24969475" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.14041515" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -338,7 +322,7 @@
       <window_info anchor="right" id="Flutter Outline" order="6" />
       <window_info anchor="right" id="Theme Preview" order="7" />
       <window_info anchor="right" id="Maven Projects" order="8" />
-      <window_info anchor="right" id="Database" order="9" visible="true" weight="0.21489622" />
+      <window_info anchor="right" id="Database" order="9" visible="true" weight="0.24847375" />
       <window_info anchor="right" id="Palette&#9;" order="10" />
       <window_info anchor="right" id="Jenkins" order="11" />
     </layout>
@@ -364,13 +348,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/module.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="15" selection-start-column="15" selection-end-column="15" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/homicides.csv">
       <provider editor-type-id="csv-table-editor">
         <state showInfoPanel="true" fixedHeaders="false" rowLines="3" />
@@ -378,13 +355,6 @@
       <provider selected="true" editor-type-id="csv-text-editor">
         <state relative-caret-position="7380">
           <caret line="492" column="37" selection-start-line="492" selection-start-column="37" selection-end-line="492" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/package.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="20" column="19" selection-start-line="20" selection-start-column="19" selection-end-line="20" selection-end-column="19" />
         </state>
       </provider>
     </entry>
@@ -437,10 +407,20 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/module.html">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/package.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="20" column="19" selection-start-line="20" selection-start-column="19" selection-end-line="20" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/rendering.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="394">
-          <caret line="27" column="108" selection-start-line="27" selection-start-column="108" selection-end-line="27" selection-end-column="108" />
+        <state relative-caret-position="464">
+          <caret line="75" lean-forward="true" selection-start-line="75" selection-end-line="75" />
           <folding>
             <element signature="e#0#23#0" expanded="true" />
           </folding>

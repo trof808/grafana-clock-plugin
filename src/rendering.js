@@ -1,6 +1,5 @@
 import $ from 'jquery';
 import * as d3 from "d3";
-import Plotly from 'plotly.js-dist';
 
 export default function link(scope, elem, attrs, ctrl) {
     const panel = ctrl.panel;
@@ -12,36 +11,28 @@ export default function link(scope, elem, attrs, ctrl) {
     function render() {
         console.log(panel);
         if (panel.histData.length > 0 && panel.histData[0].items.length > 0) {
-            renderHist2();
+            renderHist();
         }
-    }
-
-    function renderHist2() {
-        var data = [
-            {
-                x: ['giraffes', 'orangutans', 'monkeys'],
-                y: [20, 14, 23],
-                type: 'bar'
-            }
-        ];
-
-        Plotly.newPlot('panel-plugin-test-clock-plugin.panel-height-helper ng-transclude.panel-height-helper', data);
     }
 
     function renderHist() {
         // const xData = data.items.map(d => d.x);
         const values = panel.histData[0].items.map(d => d.y);
         var formatCount = d3.format(",.0f");
-        var color = "steelblue";
+
         var margin = {top: 10, right: 30, bottom: 30, left: 30},
             width = 960 - margin.left - margin.right,
             height = 500 - margin.top - margin.bottom;
 
         var max = d3.max(values);
         var min = d3.min(values);
+
         var x = d3.scaleLinear()
             .domain([min, max])
-            .range([0, width]);
+            .range([margin.left, width - margin.right]);
+
+        var y = d3.scaleLinear()
+            .range([height - margin.bottom, margin.top]);
 
         var data = d3.histogram()
             .thresholds(x.ticks(values.length))
@@ -49,20 +40,13 @@ export default function link(scope, elem, attrs, ctrl) {
 
         console.log(x);
         console.log(data);
-        var yMax = d3.max(data, function(d){return d.length});
-        var yMin = d3.min(data, function(d){return d.length});
-        var colorScale = d3.scaleLinear()
-            .domain([yMin, yMax])
-            .range([d3.rgb(color).brighter(), d3.rgb(color).darker()]);
+
+        var yMax = d3.max(data, function(d){return d[0]});
+        var yMin = d3.min(data, function(d){return d[0]});
 
         console.log(yMax);
         console.log(yMin);
 
-        var y = d3.scaleLinear()
-            .range([height, 0]);
-
-        console.log(y);
-        console.log(y(30));
         var xAxis = d3.axisBottom(x);
 
         var svg = d3.select("panel-plugin-test-clock-plugin.panel-height-helper ng-transclude.panel-height-helper").append("svg")
@@ -81,7 +65,7 @@ export default function link(scope, elem, attrs, ctrl) {
             .attr("x", 1)
             .attr("width", function(d) { return x(d.x1) - x(d.x0) - 1; })
             .attr("height", function(d) { return height - y(d[0]); })
-            .attr("fill", function(d) { return colorScale(d[0]) });
+            .attr("fill", '#0af');
 
         bar.append("text")
             .attr("dy", ".75em")
