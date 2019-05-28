@@ -26,7 +26,7 @@ export default function link(scope, elem, attrs, ctrl) {
 
         var max = d3.max(values);
         var min = d3.min(values);
-        var x = d3.scale.linear()
+        var x = d3.scaleLinear()
             .domain([min, max])
             .range([0, width]);
 
@@ -38,14 +38,14 @@ export default function link(scope, elem, attrs, ctrl) {
         console.log(data);
         var yMax = d3.max(data, function(d){return d.length});
         var yMin = d3.min(data, function(d){return d.length});
-        var colorScale = d3.scale.linear()
+        var colorScale = d3.scaleLinear()
             .domain([yMin, yMax])
             .range([d3.rgb(color).brighter(), d3.rgb(color).darker()]);
 
         console.log(yMax);
         console.log(yMin);
 
-        var y = d3.scale.linear()
+        var y = d3.scaleLinear()
             .domain([0, yMax])
             .range([height, 0]);
 

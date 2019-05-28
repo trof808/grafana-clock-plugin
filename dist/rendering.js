@@ -31,7 +31,7 @@ System.register(['jquery', 'd3'], function (_export, _context) {
 
             var max = d3.max(values);
             var min = d3.min(values);
-            var x = d3.scale.linear().domain([min, max]).range([0, width]);
+            var x = d3.scaleLinear().domain([min, max]).range([0, width]);
 
             var data = d3.layout.histogram().bins(x.ticks(20))(values);
 
@@ -43,12 +43,12 @@ System.register(['jquery', 'd3'], function (_export, _context) {
             var yMin = d3.min(data, function (d) {
                 return d.length;
             });
-            var colorScale = d3.scale.linear().domain([yMin, yMax]).range([d3.rgb(color).brighter(), d3.rgb(color).darker()]);
+            var colorScale = d3.scaleLinear().domain([yMin, yMax]).range([d3.rgb(color).brighter(), d3.rgb(color).darker()]);
 
             console.log(yMax);
             console.log(yMin);
 
-            var y = d3.scale.linear().domain([0, yMax]).range([height, 0]);
+            var y = d3.scaleLinear().domain([0, yMax]).range([height, 0]);
 
             var xAxis = d3.svg.axis().scale(x).orient("bottom");
 
