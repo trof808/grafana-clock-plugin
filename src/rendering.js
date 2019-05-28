@@ -3,7 +3,7 @@ import * as d3 from "d3";
 
 export default function link(scope, elem, attrs, ctrl) {
     const panel = ctrl.panel;
-    const element = elem.find("panel-plugin-test-clock-plugin.panel-height-helper ng-transclude.panel-height-helper svg");
+    const element = document.querySelectorAll("panel-plugin-test-clock-plugin.panel-height-helper ng-transclude.panel-height-helper svg");
     ctrl.events.on('render', function () {
         render();
     });

@@ -6,7 +6,7 @@ System.register(["jquery", "d3"], function (_export, _context) {
     var $, d3;
     function link(scope, elem, attrs, ctrl) {
         var panel = ctrl.panel;
-        var element = elem.find("panel-plugin-test-clock-plugin.panel-height-helper ng-transclude.panel-height-helper svg");
+        var element = document.querySelectorAll("panel-plugin-test-clock-plugin.panel-height-helper ng-transclude.panel-height-helper svg");
         ctrl.events.on('render', function () {
             render();
         });
