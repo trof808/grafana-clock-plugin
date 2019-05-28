@@ -1,18 +1,18 @@
-"use strict";
+'use strict';
 
-System.register(["jquery", "d3"], function (_export, _context) {
+System.register(['jquery', 'd3'], function (_export, _context) {
     "use strict";
 
     var $, d3;
     function link(scope, elem, attrs, ctrl) {
         var panel = ctrl.panel;
-        var element = document.querySelectorAll("panel-plugin-test-clock-plugin.panel-height-helper ng-transclude.panel-height-helper svg");
         ctrl.events.on('render', function () {
             render();
         });
 
         function render() {
             console.log(panel);
+            var element = document.querySelectorAll("panel-plugin-test-clock-plugin.panel-height-helper ng-transclude.panel-height-helper svg");
             if (element.length > 0) {
                 console.log(element);
                 document.removeChild(svg);
@@ -80,7 +80,7 @@ System.register(["jquery", "d3"], function (_export, _context) {
         }
     }
 
-    _export("default", link);
+    _export('default', link);
 
     return {
         setters: [function (_jquery) {
