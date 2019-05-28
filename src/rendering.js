@@ -49,7 +49,7 @@ export default function link(scope, elem, attrs, ctrl) {
 
         var bins = histogram(xData);
 
-        y.domain([0, d3.max(bins, yData)]);
+        y.domain([0, d3.max(yData)]);
 
         console.log(bins);
 

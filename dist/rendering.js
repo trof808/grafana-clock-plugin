@@ -45,7 +45,7 @@ System.register(['jquery', 'd3'], function (_export, _context) {
 
             var bins = histogram(xData);
 
-            y.domain([0, d3.max(bins, yData)]);
+            y.domain([0, d3.max(yData)]);
 
             console.log(bins);
 
