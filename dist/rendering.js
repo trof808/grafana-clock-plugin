@@ -13,7 +13,9 @@ System.register(['jquery', 'd3'], function (_export, _context) {
 
         function render() {
             console.log(panel);
-            renderHist();
+            if (panel.histData[0].items.length > 0) {
+                renderHist();
+            }
         }
 
         function renderHist() {

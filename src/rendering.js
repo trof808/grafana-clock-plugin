@@ -10,7 +10,9 @@ export default function link(scope, elem, attrs, ctrl) {
 
     function render() {
         console.log(panel);
-        renderHist();
+        if (panel.histData[0].items.length > 0) {
+            renderHist();
+        }
     }
 
     function renderHist() {
