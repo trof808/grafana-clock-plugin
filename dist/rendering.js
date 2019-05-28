@@ -48,14 +48,16 @@ System.register(['jquery', 'd3'], function (_export, _context) {
             console.log(yMax);
             console.log(yMin);
 
-            var y = d3.scaleLinear().domain([0, yMax]).range([height, 0]);
+            var y = d3.scaleLinear().range([height, 0]);
 
+            console.log(y);
+            console.log(y(30));
             var xAxis = d3.axisBottom(x);
 
             var svg = d3.select("panel-plugin-test-clock-plugin.panel-height-helper ng-transclude.panel-height-helper").append("svg").attr("width", width + margin.left + margin.right).attr("height", height + margin.top + margin.bottom).append("g").attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
             var bar = svg.selectAll(".bar").data(data).enter().append("g").attr("class", "bar").attr("transform", function (d) {
-                return "translate(" + x(d.x0) + "," + y(0) + ")";
+                return "translate(" + x(d.x0) + "," + y(d[0]) + ")";
             });
 
             bar.append("rect").attr("x", 1).attr("width", function (d) {
