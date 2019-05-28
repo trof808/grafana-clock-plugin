@@ -15,8 +15,8 @@ export default function link(scope, elem, attrs, ctrl) {
 
     function renderHist() {
         const data = panel.histData[0];
-        const xData = data.map(d => d.x);
-        const yData = data.map(d => d.y);
+        const xData = data.items.map(d => d.x);
+        const yData = data.items.map(d => d.y);
         console.log(xData);
         console.log(yData);
         var margin = {top: 10, right: 30, bottom: 30, left: 30},

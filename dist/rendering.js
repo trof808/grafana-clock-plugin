@@ -18,10 +18,10 @@ System.register(['jquery', 'd3'], function (_export, _context) {
 
         function renderHist() {
             var data = panel.histData[0];
-            var xData = data.map(function (d) {
+            var xData = data.items.map(function (d) {
                 return d.x;
             });
-            var yData = data.map(function (d) {
+            var yData = data.items.map(function (d) {
                 return d.y;
             });
             console.log(xData);
