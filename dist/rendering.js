@@ -65,31 +65,12 @@ System.register(['jquery', 'd3'], function (_export, _context) {
             console.log(yMax);
             console.log(yMin);
 
-            // var bar = svg.selectAll(".bar")
-            //     .data(data)
-            //     .enter().append("g")
-            //     .attr("class", "bar")
-            //     .attr("transform", function(d) { return "translate(" + x(d.x0) + "," + y(d[0]) + ")"; });
-            //
-            // bar.append("rect")
-            //     .attr("x", 1)
-            //     .attr("width", function(d) { return x(d.x1) - x(d.x0) - 1; })
-            //     .attr("height", function(d) { return (height - y(d[0])) / 2; })
-            //     .attr("fill", '#0af');
-            //
-            // bar.append("text")
-            //     .attr("dy", ".75em")
-            //     .attr("y", -12)
-            //     .attr("x", function(d) { return (x(d.x1) - x(d.x0)) / 2; })
-            //     .attr("text-anchor", "middle")
-            //     .text(function(d) { return formatCount(d[0]); });
-
             svg.selectAll("rect").data(data).enter().append("rect").attr("x", 1).attr("transform", function (d) {
-                return "translate(" + x(d.x0) + "," + y(d.length) + ")";
+                return "translate(" + x(d.x0) + "," + y(d[0] || 0) / 2 + ")";
             }).attr("width", function (d) {
                 return x(d.x1) - x(d.x0) - 1;
             }).attr("height", function (d) {
-                return height - y(d.length);
+                return (height - y(d[0] || 0)) / 2;
             }).style("fill", "#69b3a2");
         }
     }
