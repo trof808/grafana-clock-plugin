@@ -1,9 +1,9 @@
 'use strict';
 
-System.register(['jquery', 'd3'], function (_export, _context) {
+System.register(['jquery', 'd3', 'moment'], function (_export, _context) {
     "use strict";
 
-    var $, d3;
+    var $, d3, moment;
     function link(scope, elem, attrs, ctrl) {
         var panel = ctrl.panel;
         ctrl.events.on('render', function () {
@@ -33,7 +33,9 @@ System.register(['jquery', 'd3'], function (_export, _context) {
 
             var formatCount = d3.format(",.0f");
             var parseDate = d3.timeParse("%Y-%m-%d");
-
+            dates.forEach(function (d) {
+                d = parseDate(d);
+            });
             console.log(dates);
 
             var margin = { top: 10, right: 30, bottom: 30, left: 40 },
@@ -45,14 +47,14 @@ System.register(['jquery', 'd3'], function (_export, _context) {
             var max = d3.max(values);
             var min = d3.min(values);
 
-            var x = d3.scaleLinear().domain([dates[0].toDate(), dates[dates.length - 1].toDate()]).range([margin.left, width - margin.right]);
+            var x = d3.scaleLinear().domain([moment(dates[0]).toDate(), moment(dates[dates.length - 1]).toDate()]).range([margin.left, width - margin.right]);
             svg.append("g").attr("class", "x axis").attr("transform", "translate(0," + height + ")").call(d3.axisBottom(x));
 
             var y = d3.scaleLinear().range([height, 0]);
 
             var data = d3.histogram().value(function (d) {
-                return d.format('YYYY-MM-DD');
-            }).domain(x.domain()).thresholds(x.ticks(dates.length))(dates);
+                return d;
+            }).domain(x.domain()).thresholds(x.ticks(d3.timeDay))(dates);
 
             y.domain([0, max]);
             svg.append("g").attr("transform", "translate(35,0)").call(d3.axisLeft(y));
@@ -86,6 +88,8 @@ System.register(['jquery', 'd3'], function (_export, _context) {
             $ = _jquery.default;
         }, function (_d) {
             d3 = _d;
+        }, function (_moment) {
+            moment = _moment.default;
         }],
         execute: function () {}
     };

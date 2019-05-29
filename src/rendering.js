@@ -1,5 +1,6 @@
 import $ from 'jquery';
 import * as d3 from "d3";
+import moment from 'moment';
 
 export default function link(scope, elem, attrs, ctrl) {
     const panel = ctrl.panel;
@@ -26,7 +27,9 @@ export default function link(scope, elem, attrs, ctrl) {
 
         var formatCount = d3.format(",.0f");
         var parseDate = d3.timeParse("%Y-%m-%d");
-
+        dates.forEach(function(d) {
+            d = parseDate(d);
+        });
         console.log(dates);
 
         var margin = {top: 10, right: 30, bottom: 30, left: 40},
@@ -43,7 +46,7 @@ export default function link(scope, elem, attrs, ctrl) {
         var min = d3.min(values);
 
         var x = d3.scaleLinear()
-            .domain([dates[0].toDate(), dates[dates.length - 1].toDate()])
+            .domain([moment(dates[0]).toDate(), moment(dates[dates.length - 1]).toDate()])
             .range([margin.left, width - margin.right]);
         svg.append("g")
             .attr("class", "x axis")
@@ -54,9 +57,9 @@ export default function link(scope, elem, attrs, ctrl) {
             .range([height, 0]);
 
         var data = d3.histogram()
-            .value(function(d) { return d.format('YYYY-MM-DD') })
+            .value(function(d) { return d })
             .domain(x.domain())
-            .thresholds(x.ticks(dates.length))
+            .thresholds(x.ticks(d3.timeDay))
             (dates);
 
         y.domain([0, max]);
