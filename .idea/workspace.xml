@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="5a4fa0fb-998e-4216-9845-ae948e90f9d2" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/src/clock_ctrl.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/clock_ctrl.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/rendering.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/rendering.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -59,7 +58,7 @@
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="HTML" value="4" />
-          <entry key="JavaScript" value="1950" />
+          <entry key="JavaScript" value="1954" />
           <entry key="PLAIN_TEXT" value="7" />
           <entry key="SQL" value="11" />
           <entry key="Scratch" value="95" />
@@ -72,8 +71,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/clock_ctrl.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="416">
-              <caret line="73" column="11" lean-forward="true" selection-start-line="73" selection-start-column="11" selection-end-line="73" selection-end-column="11" />
+            <state relative-caret-position="386">
+              <caret line="71" column="46" selection-start-line="71" selection-start-column="46" selection-end-line="71" selection-end-column="46" />
               <folding>
                 <element signature="e#0#60#0" expanded="true" />
               </folding>
@@ -244,12 +243,12 @@
       <updated>1558966747422</updated>
       <workItem from="1558966750533" duration="2961000" />
       <workItem from="1559024438181" duration="17784000" />
-      <workItem from="1559118089444" duration="3781000" />
+      <workItem from="1559118089444" duration="3845000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="24526000" />
+    <option name="totallyTimeSpent" value="24590000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -374,8 +373,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/clock_ctrl.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="416">
-          <caret line="73" column="11" lean-forward="true" selection-start-line="73" selection-start-column="11" selection-end-line="73" selection-end-column="11" />
+        <state relative-caret-position="386">
+          <caret line="71" column="46" selection-start-line="71" selection-start-column="46" selection-end-line="71" selection-end-column="46" />
           <folding>
             <element signature="e#0#60#0" expanded="true" />
           </folding>
