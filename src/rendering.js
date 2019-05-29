@@ -22,16 +22,15 @@ export default function link(scope, elem, attrs, ctrl) {
 
     function renderHist() {
         // const xData = data.items.map(d => d.x);
-        const values = panel.histData[0].items.map(d => d.y);
-        let dates = panel.histData[0].items.map(d => d.x);
+        const values = panel.histData[0].items;
+        // let dates = panel.histData[0].items.map(d => d.x);
 
         var formatCount = d3.format(",.0f");
         var parseDate = d3.timeParse("%Y-%m-%d");
-        dates = dates.map(date => {
-            console.log(parseDate(date));
-           return parseDate(date);
+        values.forEach(function(d) {
+           d.x = parseDate(d.x);
         });
-        console.log(dates);
+        console.log(values);
 
         var margin = {top: 10, right: 30, bottom: 30, left: 40},
             width = 460 - margin.left - margin.right,
@@ -43,11 +42,10 @@ export default function link(scope, elem, attrs, ctrl) {
             .append("g")
             .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
-        var max = d3.max(values);
-        var min = d3.min(values);
+        var max = d3.max(values.map(v => v.y));
 
         var x = d3.scaleLinear()
-            .domain([moment(dates[0]).toDate(), moment(dates[dates.length - 1]).toDate()])
+            .domain([new Date(moment(values[0].x)), new Date(moment(values[values.length - 1].x))])
             .range([margin.left, width - margin.right]);
         svg.append("g")
             .attr("class", "x axis")
@@ -58,10 +56,10 @@ export default function link(scope, elem, attrs, ctrl) {
             .range([height, 0]);
 
         var data = d3.histogram()
-            .value(function(d) { return d })
+            .value(function(d) { return d.x })
             .domain(x.domain())
-            .thresholds(x.ticks(dates.length))
-            (dates);
+            .thresholds(x.ticks(values.length))
+            (values);
 
         y.domain([0, max]);
         svg.append("g")
@@ -69,12 +67,6 @@ export default function link(scope, elem, attrs, ctrl) {
             .call(d3.axisLeft(y));
 
         console.log(data);
-
-        var yMax = d3.max(data, function(d){return d[0]});
-        var yMin = d3.min(data, function(d){return d[0]});
-
-        console.log(yMax);
-        console.log(yMin);
 
         svg.selectAll("rect")
             .data(data)
