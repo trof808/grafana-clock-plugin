@@ -30,7 +30,7 @@ export default function link(scope, elem, attrs, ctrl) {
         });
         console.log(values);
 
-        var margin = {top: 10, right: 30, bottom: 0, left: 40},
+        var margin = {top: 10, right: 30, bottom: 70, left: 40},
             width = 460 - margin.left - margin.right,
             height = 500 - margin.top - margin.bottom;
 
