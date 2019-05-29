@@ -42,7 +42,7 @@ System.register(['jquery', 'd3'], function (_export, _context) {
                 width = 460 - margin.left - margin.right,
                 height = 400 - margin.top - margin.bottom;
 
-            d3.select("panel-plugin-test-clock-plugin.panel-height-helper ng-transclude.panel-height-helper").append("svg").attr("width", width + margin.left + margin.right).attr("height", height + margin.top + margin.bottom).append("g").attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+            var svg = d3.select("panel-plugin-test-clock-plugin.panel-height-helper ng-transclude.panel-height-helper").append("svg").attr("width", width + margin.left + margin.right).attr("height", height + margin.top + margin.bottom).append("g").attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
             var max = d3.max(values);
             var min = d3.min(values);

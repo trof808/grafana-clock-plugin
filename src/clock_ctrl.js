@@ -69,7 +69,7 @@ export class ClockCtrl extends MetricsPanelCtrl {
         title: `data ${i}`,
         items: _.map(d.rows, (r, j) => {
           return {
-            x: r[0],
+            x: moment(r[0]).format('YYYY-mm-dd'),
             y: r[1]
           }
         })

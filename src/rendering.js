@@ -35,7 +35,7 @@ export default function link(scope, elem, attrs, ctrl) {
             width = 460 - margin.left - margin.right,
             height = 400 - margin.top - margin.bottom;
 
-        d3.select("panel-plugin-test-clock-plugin.panel-height-helper ng-transclude.panel-height-helper").append("svg")
+        var svg = d3.select("panel-plugin-test-clock-plugin.panel-height-helper ng-transclude.panel-height-helper").append("svg")
             .attr("width", width + margin.left + margin.right)
             .attr("height", height + margin.top + margin.bottom)
             .append("g")

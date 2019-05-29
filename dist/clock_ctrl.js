@@ -141,7 +141,7 @@ System.register(['app/plugins/sdk', 'moment', 'lodash', './rendering'], function
                 title: 'data ' + i,
                 items: _.map(d.rows, function (r, j) {
                   return {
-                    x: r[0],
+                    x: moment(r[0]).format('YYYY-mm-dd'),
                     y: r[1]
                   };
                 })
