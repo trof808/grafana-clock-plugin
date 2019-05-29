@@ -27,8 +27,9 @@ export default function link(scope, elem, attrs, ctrl) {
 
         var formatCount = d3.format(",.0f");
         var parseDate = d3.timeParse("%Y-%m-%d");
-        dates.forEach(function(d) {
-            d = parseDate(d);
+        dates.map(date => {
+            console.log(parseDate(date));
+           return parseDate(date);
         });
         console.log(dates);
 
