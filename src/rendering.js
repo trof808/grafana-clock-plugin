@@ -21,11 +21,8 @@ export default function link(scope, elem, attrs, ctrl) {
     }
 
     function renderHist() {
-        // const xData = data.items.map(d => d.x);
         const values = panel.histData[0].items;
-        // let dates = panel.histData[0].items.map(d => d.x);
 
-        var formatCount = d3.format(",.0f");
         var parseDate = d3.timeParse("%Y-%m-%d");
         values.forEach(function(d) {
            d.x = parseDate(d.x);
@@ -58,7 +55,7 @@ export default function link(scope, elem, attrs, ctrl) {
         var data = d3.histogram()
             .value(function(d) { return d.x })
             .domain(x.domain())
-            .thresholds(x.ticks(values.length))
+            .thresholds(x.ticks(d3.timeDay))
             (values);
 
         y.domain([0, max]);
