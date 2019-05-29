@@ -55,7 +55,7 @@ System.register(['jquery', 'd3', 'moment'], function (_export, _context) {
 
             var data = d3.histogram().value(function (d) {
                 return d;
-            }).domain(x.domain()).thresholds(x.ticks(d3.timeDay))(dates);
+            }).domain(x.domain()).thresholds(x.ticks(dates.length))(dates);
 
             y.domain([0, max]);
             svg.append("g").attr("transform", "translate(35,0)").call(d3.axisLeft(y));

@@ -60,7 +60,7 @@ export default function link(scope, elem, attrs, ctrl) {
         var data = d3.histogram()
             .value(function(d) { return d })
             .domain(x.domain())
-            .thresholds(x.ticks(d3.timeDay))
+            .thresholds(x.ticks(dates.length))
             (dates);
 
         y.domain([0, max]);
