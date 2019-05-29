@@ -75,7 +75,7 @@ export default function link(scope, elem, attrs, ctrl) {
             .attr("x", 1)
             .attr("transform", function(d) { return "translate(" + x(d.x0) + "," + y(d[0] || 0) / 2 + ")"; })
             .attr("width", function(d) { return x(d.x1) - x(d.x0) -1 ; })
-            .attr("height", function(d) { return (height - y(d[0] || 0)) / 2; })
+            .attr("height", function(d) { return (height - y(d[0] || 0)) / 4; })
             .style("fill", "#69b3a2")
     }
 

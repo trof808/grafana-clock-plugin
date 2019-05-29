@@ -70,7 +70,7 @@ System.register(['jquery', 'd3'], function (_export, _context) {
             }).attr("width", function (d) {
                 return x(d.x1) - x(d.x0) - 1;
             }).attr("height", function (d) {
-                return (height - y(d[0] || 0)) / 2;
+                return (height - y(d[0] || 0)) / 4;
             }).style("fill", "#69b3a2");
         }
     }
