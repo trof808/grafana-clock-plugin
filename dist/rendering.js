@@ -44,7 +44,7 @@ System.register(['jquery', 'd3', 'moment'], function (_export, _context) {
             var x = d3.scaleOrdinal().domain(values.map(function (v) {
                 return v.x;
             })).range([margin.left, width - margin.right]);
-            svg.append("g").attr("class", "x axis").attr("transform", "translate(0," + height + ")").call(d3.axisBottom(x).tick(d3.timeFormat("%Y-%m-%d")));
+            svg.append("g").attr("class", "x axis").attr("transform", "translate(0," + height + ")").call(d3.axisBottom(x).tickFormat(d3.timeFormat("%Y-%m-%d")));
 
             var y = d3.scaleLinear().domain([0, max]).range([height, 0]);
 
