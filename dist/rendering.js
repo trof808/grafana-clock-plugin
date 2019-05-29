@@ -35,8 +35,6 @@ System.register(['jquery', 'd3'], function (_export, _context) {
             var parseDate = d3.timeParse("%Y-%m-%d");
 
             console.log(dates);
-            dates.forEach(parseDate);
-            console.log(dates);
 
             var margin = { top: 10, right: 30, bottom: 30, left: 40 },
                 width = 460 - margin.left - margin.right,
@@ -47,12 +45,14 @@ System.register(['jquery', 'd3'], function (_export, _context) {
             var max = d3.max(values);
             var min = d3.min(values);
 
-            var x = d3.scaleLinear().domain([min, max]).range([margin.left, width - margin.right]);
+            var x = d3.scaleLinear().domain([dates[0].toDate(), dates[dates.length - 1].toDate()]).range([margin.left, width - margin.right]);
             svg.append("g").attr("class", "x axis").attr("transform", "translate(0," + height + ")").call(d3.axisBottom(x));
 
             var y = d3.scaleLinear().range([height, 0]);
 
-            var data = d3.histogram().domain(x.domain()).thresholds(x.ticks(values.length))(values);
+            var data = d3.histogram().value(function (d) {
+                return d.format('YYYY-MM-DD');
+            }).domain(x.domain()).thresholds(x.ticks(dates.length))(dates);
 
             y.domain([0, max]);
             svg.append("g").attr("transform", "translate(35,0)").call(d3.axisLeft(y));

@@ -28,8 +28,6 @@ export default function link(scope, elem, attrs, ctrl) {
         var parseDate = d3.timeParse("%Y-%m-%d");
 
         console.log(dates);
-        dates.forEach(parseDate);
-        console.log(dates);
 
         var margin = {top: 10, right: 30, bottom: 30, left: 40},
             width = 460 - margin.left - margin.right,
@@ -45,7 +43,7 @@ export default function link(scope, elem, attrs, ctrl) {
         var min = d3.min(values);
 
         var x = d3.scaleLinear()
-            .domain([min, max])
+            .domain([dates[0].toDate(), dates[dates.length - 1].toDate()])
             .range([margin.left, width - margin.right]);
         svg.append("g")
             .attr("class", "x axis")
@@ -56,9 +54,10 @@ export default function link(scope, elem, attrs, ctrl) {
             .range([height, 0]);
 
         var data = d3.histogram()
+            .value(function(d) { return d.format('YYYY-MM-DD') })
             .domain(x.domain())
-            .thresholds(x.ticks(values.length))
-            (values);
+            .thresholds(x.ticks(dates.length))
+            (dates);
 
         y.domain([0, max]);
         svg.append("g")
