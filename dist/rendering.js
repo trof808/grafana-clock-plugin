@@ -48,9 +48,7 @@ System.register(['jquery', 'd3'], function (_export, _context) {
 
             var data = d3.histogram().domain(x.domain()).thresholds(x.ticks(values.length))(values);
 
-            y.domain([0, d3.max(data, function (d) {
-                return d.length;
-            })]);
+            y.domain([0, max]);
             svg.append("g").call(d3.axisLeft(y));
 
             console.log(data);
@@ -66,11 +64,11 @@ System.register(['jquery', 'd3'], function (_export, _context) {
             console.log(yMin);
 
             svg.selectAll("rect").data(data).enter().append("rect").attr("x", 1).attr("transform", function (d) {
-                return "translate(" + x(d.x0) + "," + y(d[0] || 0) / 2 + ")";
+                return "translate(" + x(d.x0) + "," + y(d[0] || 0) + ")";
             }).attr("width", function (d) {
                 return x(d.x1) - x(d.x0) - 1;
             }).attr("height", function (d) {
-                return (height - y(d[0] || 0)) / 4;
+                return height - y(d[0] || 0);
             }).style("fill", "#69b3a2");
         }
     }
