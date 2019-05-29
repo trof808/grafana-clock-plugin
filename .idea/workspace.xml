@@ -31,6 +31,12 @@
         <item name="budget@localhost" type="feb32156:DbDataSourceImpl" />
         <item name="databases" type="d4e8921:DatabaseStructure$FamilyGroup" />
       </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="budget@localhost" type="feb32156:DbDataSourceImpl" />
+        <item name="databases" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="budget: database" type="6d9b600a:PostgresImplModel$Database" />
+      </path>
     </expand>
     <select />
   </component>
@@ -58,10 +64,10 @@
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="HTML" value="4" />
-          <entry key="JavaScript" value="2621" />
+          <entry key="JavaScript" value="2645" />
           <entry key="PLAIN_TEXT" value="7" />
           <entry key="SQL" value="11" />
-          <entry key="Scratch" value="95" />
+          <entry key="Scratch" value="105" />
         </counts>
       </usages-collector>
     </session>
@@ -80,8 +86,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/rendering.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="168">
-              <caret line="32" column="52" selection-start-line="32" selection-start-column="52" selection-end-line="32" selection-end-column="52" />
+            <state relative-caret-position="390">
+              <caret line="26" lean-forward="true" selection-start-line="26" selection-end-line="26" />
               <folding>
                 <element signature="e#0#23#0" expanded="true" />
               </folding>
@@ -97,8 +103,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/a047a5cf-981a-43c6-989e-f38ab59bbba7/console.sql">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="450">
-              <caret line="30" column="32" lean-forward="true" selection-start-line="30" selection-start-column="32" selection-end-line="30" selection-end-column="32" />
+            <state relative-caret-position="480">
+              <caret line="32" column="32" lean-forward="true" selection-start-line="32" selection-start-column="32" selection-end-line="32" selection-end-column="32" />
             </state>
           </provider>
         </entry>
@@ -118,6 +124,7 @@
       <find>scale</find>
       <find>bins</find>
       <find>axis</find>
+      <find>ticks</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -145,8 +152,8 @@
         <option value="$PROJECT_DIR$/src/editor.html" />
         <option value="$PROJECT_DIR$/src/homicides.csv" />
         <option value="$PROJECT_DIR$/src/module.html" />
-        <option value="$APPLICATION_CONFIG_DIR$/consoles/db/a047a5cf-981a-43c6-989e-f38ab59bbba7/console.sql" />
         <option value="$PROJECT_DIR$/src/clock_ctrl.js" />
+        <option value="$APPLICATION_CONFIG_DIR$/consoles/db/a047a5cf-981a-43c6-989e-f38ab59bbba7/console.sql" />
         <option value="$PROJECT_DIR$/src/rendering.js" />
       </list>
     </option>
@@ -231,12 +238,12 @@
       <updated>1558966747422</updated>
       <workItem from="1558966750533" duration="2961000" />
       <workItem from="1559024438181" duration="17784000" />
-      <workItem from="1559118089444" duration="9593000" />
+      <workItem from="1559118089444" duration="10251000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="30338000" />
+    <option name="totallyTimeSpent" value="30996000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -265,12 +272,12 @@
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32941177" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="7" visible="true" weight="0.32941177" />
+      <window_info anchor="bottom" id="Terminal" order="7" weight="0.32941177" />
       <window_info anchor="bottom" id="Event Log" order="8" side_tool="true" />
       <window_info anchor="bottom" id="Database Changes" order="9" />
       <window_info anchor="bottom" id="Version Control" order="10" weight="0.32941177" />
       <window_info anchor="bottom" id="Flutter Performance" order="11" side_tool="true" />
-      <window_info anchor="bottom" id="Database Console" order="12" weight="0.32941177" />
+      <window_info active="true" anchor="bottom" id="Database Console" order="12" visible="true" weight="0.32941177" />
       <window_info anchor="right" x="0" y="0" width="370" height="827" id="Documentation" sideWeight="0.50079745" side_tool="true" weight="0.24847375" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -335,13 +342,6 @@
     <entry file="file://$PROJECT_DIR$/src/module.html">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/a047a5cf-981a-43c6-989e-f38ab59bbba7/console.sql">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="450">
-          <caret line="30" column="32" lean-forward="true" selection-start-line="30" selection-start-column="32" selection-end-line="30" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/clock_ctrl.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="15">
@@ -356,10 +356,17 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/a047a5cf-981a-43c6-989e-f38ab59bbba7/console.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="480">
+          <caret line="32" column="32" lean-forward="true" selection-start-line="32" selection-start-column="32" selection-end-line="32" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/rendering.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="168">
-          <caret line="32" column="52" selection-start-line="32" selection-start-column="52" selection-end-line="32" selection-end-column="52" />
+        <state relative-caret-position="390">
+          <caret line="26" lean-forward="true" selection-start-line="26" selection-end-line="26" />
           <folding>
             <element signature="e#0#23#0" expanded="true" />
           </folding>

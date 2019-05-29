@@ -10,6 +10,7 @@ export default function link(scope, elem, attrs, ctrl) {
 
     function render() {
         console.log(panel);
+        document.getElementsByClassName("panel-content")[0].style.backgroundColor = "#ddd";
         const nodes = document.querySelectorAll("panel-plugin-test-clock-plugin.panel-height-helper ng-transclude.panel-height-helper svg");
         if (nodes.length > 0) {
             nodes[0].remove();
@@ -60,28 +61,11 @@ export default function link(scope, elem, attrs, ctrl) {
             .domain([0, max])
             .range([height, 0]);
 
-        // var data = d3.histogram()
-        //     .value(function(d) { return d.x })
-        //     .domain(x.domain())
-        //     .thresholds(x.ticks(d3.timeDay))
-        //     (values);
-
         svg.append("g")
             .attr("transform", "translate(35,0)")
             .call(d3.axisLeft(y));
 
-        // console.log(data);
         console.log(values);
-
-        // svg.selectAll("rect")
-        //     .data(data)
-        //     .enter()
-        //     .append("rect")
-        //     .attr("x", 1)
-        //     .attr("transform", function(d) { return "translate(" + x(d.x0) + "," + y(d[0] || 0) + ")"; })
-        //     .attr("width", function(d) { return x(d.x1) - x(d.x0) -1 ; })
-        //     .attr("height", function(d) { return (height - y(d[0] || 0)); })
-        //     .style("fill", "#69b3a2")
 
         svg.selectAll("bar")
             .data(values)
