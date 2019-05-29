@@ -42,7 +42,7 @@ export default function link(scope, elem, attrs, ctrl) {
 
         var max = d3.max(values, function(v) { return v.y });
 
-        var x = d3.scaleOriginal()
+        var x = d3.scaleOrdinal()
             .domain(values.map(function(v) { return v.x }))
             .range([margin.left, width - margin.right])
             .round('.05');
