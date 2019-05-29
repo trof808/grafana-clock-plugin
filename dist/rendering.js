@@ -43,8 +43,8 @@ System.register(['jquery', 'd3', 'moment'], function (_export, _context) {
 
             var x = d3.scaleOrdinal().domain(values.map(function (v) {
                 return v.x;
-            })).range([margin.left, width - margin.right]).round('.05');
-            svg.append("g").attr("class", "x axis").attr("transform", "translate(0," + height + ")").call(d3.axisBottom(x));
+            })).range([margin.left, width - margin.right]);
+            svg.append("g").attr("class", "x axis").attr("transform", "translate(0," + height + ")").call(d3.axisBottom(x).tick(d3.timeFormat("%Y-%m-%d")));
 
             var y = d3.scaleLinear().domain([0, max]).range([height, 0]);
 
@@ -55,14 +55,25 @@ System.register(['jquery', 'd3', 'moment'], function (_export, _context) {
             svg.append("g").attr("transform", "translate(35,0)").call(d3.axisLeft(y));
 
             console.log(data);
+            console.log(values);
 
-            svg.selectAll("rect").data(data).enter().append("rect").attr("x", 1).attr("transform", function (d) {
-                return "translate(" + x(d.x0) + "," + y(d[0] || 0) + ")";
-            }).attr("width", function (d) {
-                return x(d.x1) - x(d.x0) - 1;
+            // svg.selectAll("rect")
+            //     .data(data)
+            //     .enter()
+            //     .append("rect")
+            //     .attr("x", 1)
+            //     .attr("transform", function(d) { return "translate(" + x(d.x0) + "," + y(d[0] || 0) + ")"; })
+            //     .attr("width", function(d) { return x(d.x1) - x(d.x0) -1 ; })
+            //     .attr("height", function(d) { return (height - y(d[0] || 0)); })
+            //     .style("fill", "#69b3a2")
+
+            svg.selectAll("bar").data(values).enter().append("rect").style("fill", "steelblue").attr("x", function (d) {
+                return x(d.x);
+            }).attr("width", x.rangeBand()).attr("y", function (d) {
+                return y(d.y);
             }).attr("height", function (d) {
-                return height - y(d[0] || 0);
-            }).style("fill", "#69b3a2");
+                return height - y(d.y);
+            });
         }
     }
 
