@@ -33,7 +33,7 @@ System.register(['jquery', 'd3', 'moment'], function (_export, _context) {
 
             var margin = { top: 10, right: 30, bottom: 30, left: 40 },
                 width = 460 - margin.left - margin.right,
-                height = 400 - margin.top - margin.bottom;
+                height = 450 - margin.top - margin.bottom;
 
             var svg = d3.select("panel-plugin-test-clock-plugin.panel-height-helper ng-transclude.panel-height-helper").append("svg").attr("width", width + margin.left + margin.right).attr("height", height + margin.top + margin.bottom).append("g").attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
@@ -43,7 +43,7 @@ System.register(['jquery', 'd3', 'moment'], function (_export, _context) {
 
             var x = d3.scaleBand().domain(values.map(function (v) {
                 return v.x;
-            })).range([margin.left, width - margin.right]);
+            })).range([margin.left, width - margin.right]).padding(0.1);
             svg.append("g").attr("class", "x axis").attr("transform", "translate(0," + height + ")").call(d3.axisBottom(x).tickFormat(d3.timeFormat("%Y-%m-%d"))).selectAll("text").style("text-anchor", "end").attr("dx", "-.8em").attr("dy", "-.55em").attr("transform", "rotate(-90)");
 
             var y = d3.scaleLinear().domain([0, max]).range([height, 0]);
