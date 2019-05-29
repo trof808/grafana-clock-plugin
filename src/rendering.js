@@ -52,7 +52,7 @@ export default function link(scope, elem, attrs, ctrl) {
             .range([margin.left, width - margin.right]);
         svg.append("g")
             .attr("class", "x axis")
-            .attr("transform", "translate(35,0)")
+            .attr("transform", "translate(0," + height + ")")
             .call(d3.axisBottom(x));
 
         var y = d3.scaleLinear()
@@ -65,7 +65,7 @@ export default function link(scope, elem, attrs, ctrl) {
 
         y.domain([0, max]);
         svg.append("g")
-            .attr("transform", "translate(0," + height + ")")
+            .attr("transform", "translate(35,0)")
             .call(d3.axisLeft(y));
 
         console.log(data);

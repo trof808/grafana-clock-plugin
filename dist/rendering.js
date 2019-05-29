@@ -49,14 +49,14 @@ System.register(['jquery', 'd3'], function (_export, _context) {
             var min = d3.min(values);
 
             var x = d3.scaleLinear().domain([min, max]).range([margin.left, width - margin.right]);
-            svg.append("g").attr("class", "x axis").attr("transform", "translate(35,0)").call(d3.axisBottom(x));
+            svg.append("g").attr("class", "x axis").attr("transform", "translate(0," + height + ")").call(d3.axisBottom(x));
 
             var y = d3.scaleLinear().range([height, 0]);
 
             var data = d3.histogram().domain(x.domain()).thresholds(x.ticks(values.length))(values);
 
             y.domain([0, max]);
-            svg.append("g").attr("transform", "translate(0," + height + ")").call(d3.axisLeft(y));
+            svg.append("g").attr("transform", "translate(35,0)").call(d3.axisLeft(y));
 
             console.log(data);
 
