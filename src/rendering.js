@@ -54,17 +54,17 @@ export default function link(scope, elem, attrs, ctrl) {
             .domain([0, max])
             .range([height, 0]);
 
-        var data = d3.histogram()
-            .value(function(d) { return d.x })
-            .domain(x.domain())
-            .thresholds(x.ticks(d3.timeDay))
-            (values);
+        // var data = d3.histogram()
+        //     .value(function(d) { return d.x })
+        //     .domain(x.domain())
+        //     .thresholds(x.ticks(d3.timeDay))
+        //     (values);
 
         svg.append("g")
             .attr("transform", "translate(35,0)")
             .call(d3.axisLeft(y));
 
-        console.log(data);
+        // console.log(data);
         console.log(values);
 
         // svg.selectAll("rect")
