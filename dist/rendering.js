@@ -41,7 +41,7 @@ System.register(['jquery', 'd3', 'moment'], function (_export, _context) {
                 return v.y;
             });
 
-            var x = d3.scaleOrdinal().domain(values.map(function (v) {
+            var x = d3.scaleBand().domain(values.map(function (v) {
                 return v.x;
             })).range([margin.left, width - margin.right]);
             svg.append("g").attr("class", "x axis").attr("transform", "translate(0," + height + ")").call(d3.axisBottom(x).tickFormat(d3.timeFormat("%Y-%m-%d")));
@@ -71,7 +71,7 @@ System.register(['jquery', 'd3', 'moment'], function (_export, _context) {
 
             svg.selectAll("bar").data(values).enter().append("rect").style("fill", "steelblue").attr("x", function (d) {
                 return x(d.x);
-            }).attr("width", x.rangeBand()).attr("y", function (d) {
+            }).attr("width", x.bandwidth()).attr("y", function (d) {
                 return y(d.y);
             }).attr("height", function (d) {
                 return height - y(d.y);

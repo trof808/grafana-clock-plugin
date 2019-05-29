@@ -42,7 +42,7 @@ export default function link(scope, elem, attrs, ctrl) {
 
         var max = d3.max(values, function(v) { return v.y });
 
-        var x = d3.scaleOrdinal()
+        var x = d3.scaleBand()
             .domain(values.map(function(v) { return v.x }))
             .range([margin.left, width - margin.right]);
         svg.append("g")
@@ -82,7 +82,7 @@ export default function link(scope, elem, attrs, ctrl) {
             .enter().append("rect")
             .style("fill", "steelblue")
             .attr("x", function(d) { return x(d.x); })
-            .attr("width", x.rangeBand())
+            .attr("width", x.bandwidth())
             .attr("y", function(d) { return y(d.y); })
             .attr("height", function(d) { return height - y(d.y); });
     }
