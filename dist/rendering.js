@@ -12,9 +12,13 @@ System.register(['jquery', 'd3'], function (_export, _context) {
 
         function render() {
             console.log(panel);
-            document.querySelectorAll("panel-plugin-test-clock-plugin.panel-height-helper ng-transclude.panel-height-helper svg")[0].remove();
+            var nodes = document.querySelectorAll("panel-plugin-test-clock-plugin.panel-height-helper ng-transclude.panel-height-helper svg");
+            if (nodes.length > 0) {
+                nodes[0].remove();
+            }
             if (panel.histData.length > 0 && panel.histData[0].items.length > 0) {
                 renderHist();
+                ctrl.renderingCompleted();
             }
         }
 
