@@ -49,7 +49,7 @@ System.register(['jquery', 'd3'], function (_export, _context) {
             var data = d3.histogram().domain(x.domain()).thresholds(x.ticks(values.length))(values);
 
             y.domain([0, max]);
-            svg.append("g").call(d3.axisLeft(y));
+            svg.append("g").attr("transform", "translate(0," + height + ")").call(d3.axisLeft(y));
 
             console.log(data);
 

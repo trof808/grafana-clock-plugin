@@ -58,6 +58,7 @@ export default function link(scope, elem, attrs, ctrl) {
 
         y.domain([0, max]);
         svg.append("g")
+            .attr("transform", "translate(0," + height + ")")
             .call(d3.axisLeft(y));
 
         console.log(data);
