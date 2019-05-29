@@ -9,6 +9,7 @@ export default function link(scope, elem, attrs, ctrl) {
 
     function render() {
         console.log(panel);
+        document.querySelectorAll("panel-plugin-test-clock-plugin.panel-height-helper ng-transclude.panel-height-helper svg")[0].remove();
         if (panel.histData.length > 0 && panel.histData[0].items.length > 0) {
             renderHist();
         }
@@ -24,12 +25,14 @@ export default function link(scope, elem, attrs, ctrl) {
             height = 400 - margin.top - margin.bottom;
 
         var svg;
+        //
+        // if (document.querySelectorAll("panel-plugin-test-clock-plugin.panel-height-helper ng-transclude.panel-height-helper svg").length === 0) {
+        //     svg = d3.select("panel-plugin-test-clock-plugin.panel-height-helper ng-transclude.panel-height-helper").append("svg");
+        // } else {
+        //     svg = d3.select("panel-plugin-test-clock-plugin.panel-height-helper ng-transclude.panel-height-helper svg");
+        // }
 
-        if (document.querySelectorAll("panel-plugin-test-clock-plugin.panel-height-helper ng-transclude.panel-height-helper svg").length === 0) {
-            svg = d3.select("panel-plugin-test-clock-plugin.panel-height-helper ng-transclude.panel-height-helper").append("svg");
-        } else {
-            svg = d3.select("panel-plugin-test-clock-plugin.panel-height-helper ng-transclude.panel-height-helper svg");
-        }
+        svg = d3.select("panel-plugin-test-clock-plugin.panel-height-helper ng-transclude.panel-height-helper").append("svg");
 
         svg
             .attr("width", width + margin.left + margin.right)
@@ -45,7 +48,7 @@ export default function link(scope, elem, attrs, ctrl) {
             .range([margin.left, width - margin.right]);
         svg.append("g")
             .attr("class", "x axis")
-            .attr("transform", "translate(0," + height + ")")
+            .attr("transform", "translate(35,0)")
             .call(d3.axisBottom(x));
 
         var y = d3.scaleLinear()
