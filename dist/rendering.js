@@ -31,7 +31,7 @@ System.register(['jquery', 'd3', 'moment'], function (_export, _context) {
             });
             console.log(values);
 
-            var margin = { top: 10, right: 30, bottom: 30, left: 40 },
+            var margin = { top: 10, right: 30, bottom: 0, left: 40 },
                 width = 460 - margin.left - margin.right,
                 height = 500 - margin.top - margin.bottom;
 
