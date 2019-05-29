@@ -2,9 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5a4fa0fb-998e-4216-9845-ae948e90f9d2" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/rendering.js" beforeDir="false" afterPath="$PROJECT_DIR$/dist/rendering.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/rendering.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/dist/rendering.js.map" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/rendering.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/rendering.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -61,7 +58,7 @@
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="HTML" value="4" />
-          <entry key="JavaScript" value="2613" />
+          <entry key="JavaScript" value="2616" />
           <entry key="PLAIN_TEXT" value="7" />
           <entry key="SQL" value="11" />
           <entry key="Scratch" value="95" />
@@ -83,8 +80,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/rendering.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="393">
-              <caret line="47" column="26" selection-start-line="47" selection-start-column="26" selection-end-line="47" selection-end-column="26" />
+            <state relative-caret-position="198">
+              <caret line="34" column="24" selection-start-line="34" selection-start-column="24" selection-end-line="34" selection-end-column="24" />
               <folding>
                 <element signature="e#0#23#0" expanded="true" />
               </folding>
@@ -234,12 +231,12 @@
       <updated>1558966747422</updated>
       <workItem from="1558966750533" duration="2961000" />
       <workItem from="1559024438181" duration="17784000" />
-      <workItem from="1559118089444" duration="9396000" />
+      <workItem from="1559118089444" duration="9456000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="30141000" />
+    <option name="totallyTimeSpent" value="30201000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -361,8 +358,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/rendering.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="393">
-          <caret line="47" column="26" selection-start-line="47" selection-start-column="26" selection-end-line="47" selection-end-column="26" />
+        <state relative-caret-position="198">
+          <caret line="34" column="24" selection-start-line="34" selection-start-column="24" selection-end-line="34" selection-end-column="24" />
           <folding>
             <element signature="e#0#23#0" expanded="true" />
           </folding>
