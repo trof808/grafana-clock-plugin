@@ -23,11 +23,11 @@ export default function link(scope, elem, attrs, ctrl) {
     function renderHist() {
         // const xData = data.items.map(d => d.x);
         const values = panel.histData[0].items.map(d => d.y);
-        const dates = panel.histData[0].items.map(d => d.x);
+        let dates = panel.histData[0].items.map(d => d.x);
 
         var formatCount = d3.format(",.0f");
         var parseDate = d3.timeParse("%Y-%m-%d");
-        dates.map(date => {
+        dates = dates.map(date => {
             console.log(parseDate(date));
            return parseDate(date);
         });

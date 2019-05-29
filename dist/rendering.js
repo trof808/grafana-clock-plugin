@@ -33,7 +33,7 @@ System.register(['jquery', 'd3', 'moment'], function (_export, _context) {
 
             var formatCount = d3.format(",.0f");
             var parseDate = d3.timeParse("%Y-%m-%d");
-            dates.map(function (date) {
+            dates = dates.map(function (date) {
                 console.log(parseDate(date));
                 return parseDate(date);
             });
