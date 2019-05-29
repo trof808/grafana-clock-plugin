@@ -20,6 +20,7 @@ export default function link(scope, elem, attrs, ctrl) {
         }
     }
 
+
     function renderHist() {
         const values = panel.histData[0].items;
 
@@ -39,17 +40,19 @@ export default function link(scope, elem, attrs, ctrl) {
             .append("g")
             .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
-        var max = d3.max(values.map(v => v.y));
+        var max = d3.max(values, function(v) { return v.y });
 
-        var x = d3.scaleLinear()
-            .domain([new Date(moment(values[0].x)), new Date(moment(values[values.length - 1].x))])
-            .range([margin.left, width - margin.right]);
+        var x = d3.scaleOriginal()
+            .domain(values.map(function(v) { return v.x }))
+            .range([margin.left, width - margin.right])
+            .round('.05');
         svg.append("g")
             .attr("class", "x axis")
             .attr("transform", "translate(0," + height + ")")
             .call(d3.axisBottom(x));
 
         var y = d3.scaleLinear()
+            .domain([0, max])
             .range([height, 0]);
 
         var data = d3.histogram()
@@ -58,7 +61,6 @@ export default function link(scope, elem, attrs, ctrl) {
             .thresholds(x.ticks(d3.timeDay))
             (values);
 
-        y.domain([0, max]);
         svg.append("g")
             .attr("transform", "translate(35,0)")
             .call(d3.axisLeft(y));

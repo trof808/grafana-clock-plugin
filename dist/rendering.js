@@ -37,20 +37,21 @@ System.register(['jquery', 'd3', 'moment'], function (_export, _context) {
 
             var svg = d3.select("panel-plugin-test-clock-plugin.panel-height-helper ng-transclude.panel-height-helper").append("svg").attr("width", width + margin.left + margin.right).attr("height", height + margin.top + margin.bottom).append("g").attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
-            var max = d3.max(values.map(function (v) {
+            var max = d3.max(values, function (v) {
                 return v.y;
-            }));
+            });
 
-            var x = d3.scaleLinear().domain([new Date(moment(values[0].x)), new Date(moment(values[values.length - 1].x))]).range([margin.left, width - margin.right]);
+            var x = d3.scaleOriginal().domain(values.map(function (v) {
+                return v.x;
+            })).range([margin.left, width - margin.right]).round('.05');
             svg.append("g").attr("class", "x axis").attr("transform", "translate(0," + height + ")").call(d3.axisBottom(x));
 
-            var y = d3.scaleLinear().range([height, 0]);
+            var y = d3.scaleLinear().domain([0, max]).range([height, 0]);
 
             var data = d3.histogram().value(function (d) {
                 return d.x;
             }).domain(x.domain()).thresholds(x.ticks(d3.timeDay))(values);
 
-            y.domain([0, max]);
             svg.append("g").attr("transform", "translate(35,0)").call(d3.axisLeft(y));
 
             console.log(data);
