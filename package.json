@@ -23,7 +23,7 @@
     "babel-preset-es2015": "^6.5.0"
   },
   "dependencies": {
-    "d3": "^5.9.2",
+    "d3": "^7.6.1",
     "plotly.js-dist": "^1.47.4"
   }
 }
